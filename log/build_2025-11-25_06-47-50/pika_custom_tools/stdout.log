@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating pika_custom_tools.egg-info
+writing pika_custom_tools.egg-info/PKG-INFO
+writing dependency_links to pika_custom_tools.egg-info/dependency_links.txt
+writing entry points to pika_custom_tools.egg-info/entry_points.txt
+writing requirements to pika_custom_tools.egg-info/requires.txt
+writing top-level names to pika_custom_tools.egg-info/top_level.txt
+writing manifest file 'pika_custom_tools.egg-info/SOURCES.txt'
+reading manifest file 'pika_custom_tools.egg-info/SOURCES.txt'
+writing manifest file 'pika_custom_tools.egg-info/SOURCES.txt'
+running build_ext
+Creating /root/pika_ros/install_new/pika_custom_tools/lib/python3.10/site-packages/pika-custom-tools.egg-link (link to .)
+Installing pika_custom_tools script to /root/pika_ros/install_new/pika_custom_tools/lib/pika_custom_tools
+
+Installed /root/pika_ros/build_new/pika_custom_tools
+running symlink_data
+creating /root/pika_ros/install_new/pika_custom_tools/share/ament_index
+creating /root/pika_ros/install_new/pika_custom_tools/share/ament_index/resource_index
+creating /root/pika_ros/install_new/pika_custom_tools/share/ament_index/resource_index/packages
+symbolically linking /root/pika_ros/build_new/pika_custom_tools/resource/pika_custom_tools -> /root/pika_ros/install_new/pika_custom_tools/share/ament_index/resource_index/packages
+symbolically linking /root/pika_ros/build_new/pika_custom_tools/package.xml -> /root/pika_ros/install_new/pika_custom_tools/share/pika_custom_tools

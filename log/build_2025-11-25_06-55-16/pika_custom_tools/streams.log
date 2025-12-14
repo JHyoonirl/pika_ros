@@ -1,0 +1,17 @@
+[0.222s] Invoking command in '/root/pika_ros/build_new/pika_custom_tools': PYTHONPATH=/root/pika_ros/build_new/pika_custom_tools/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/pika_ros/install_new/pika_custom_tools/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/pika_ros/build_new/pika_custom_tools/build --no-deps symlink_data
+[0.301s] running develop
+[0.331s] running egg_info
+[0.332s] writing pika_custom_tools.egg-info/PKG-INFO
+[0.332s] writing dependency_links to pika_custom_tools.egg-info/dependency_links.txt
+[0.332s] writing entry points to pika_custom_tools.egg-info/entry_points.txt
+[0.332s] writing requirements to pika_custom_tools.egg-info/requires.txt
+[0.332s] writing top-level names to pika_custom_tools.egg-info/top_level.txt
+[0.332s] reading manifest file 'pika_custom_tools.egg-info/SOURCES.txt'
+[0.332s] writing manifest file 'pika_custom_tools.egg-info/SOURCES.txt'
+[0.345s] running build_ext
+[0.346s] Creating /root/pika_ros/install_new/pika_custom_tools/lib/python3.10/site-packages/pika-custom-tools.egg-link (link to .)
+[0.346s] Installing pika_custom_tools script to /root/pika_ros/install_new/pika_custom_tools/lib/pika_custom_tools
+[0.346s] 
+[0.346s] Installed /root/pika_ros/build_new/pika_custom_tools
+[0.346s] running symlink_data
+[0.358s] Invoked command in '/root/pika_ros/build_new/pika_custom_tools' returned '0': PYTHONPATH=/root/pika_ros/build_new/pika_custom_tools/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/pika_ros/install_new/pika_custom_tools/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/pika_ros/build_new/pika_custom_tools/build --no-deps symlink_data

@@ -1,0 +1,220 @@
+[0.006s] Invoking command in '/root/pika_ros/build_new/data_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/pika_ros/install_new/pika_custom_tools:/root/pika_ros/install/piper:/opt/ros/humble /usr/bin/cmake --build /root/pika_ros/build_new/data_msgs -- -j24 -l24
+[0.028s] [35m[1mConsolidate compiler generated dependencies of target data_msgs__rosidl_generator_c[0m
+[0.033s] [  1%] Built target data_msgs__cpp
+[0.034s] [ 12%] Built target data_msgs__rosidl_generator_c
+[0.036s] [ 12%] Built target ament_cmake_python_symlink_data_msgs
+[0.039s] [35m[1mConsolidate compiler generated dependencies of target data_msgs__rosidl_typesupport_cpp[0m
+[0.039s] [35m[1mConsolidate compiler generated dependencies of target data_msgs__rosidl_typesupport_fastrtps_cpp[0m
+[0.039s] [35m[1mConsolidate compiler generated dependencies of target data_msgs__rosidl_typesupport_introspection_cpp[0m
+[0.040s] [35m[1mConsolidate compiler generated dependencies of target data_msgs__rosidl_typesupport_c[0m
+[0.040s] [35m[1mConsolidate compiler generated dependencies of target data_msgs__rosidl_typesupport_introspection_c[0m
+[0.040s] [35m[1mConsolidate compiler generated dependencies of target data_msgs__rosidl_typesupport_fastrtps_c[0m
+[0.045s] [ 23%] Built target data_msgs__rosidl_typesupport_c
+[0.046s] [ 35%] Built target data_msgs__rosidl_typesupport_introspection_c
+[0.046s] [ 46%] Built target data_msgs__rosidl_typesupport_cpp
+[0.047s] [ 57%] Built target data_msgs__rosidl_typesupport_introspection_cpp
+[0.047s] [ 69%] Built target data_msgs__rosidl_typesupport_fastrtps_c
+[0.047s] [ 80%] Built target data_msgs__rosidl_typesupport_fastrtps_cpp
+[0.055s] [ 80%] Built target data_msgs
+[0.062s] [ 81%] Built target data_msgs__py
+[0.067s] [35m[1mConsolidate compiler generated dependencies of target data_msgs__rosidl_generator_py[0m
+[0.073s] [ 91%] Built target data_msgs__rosidl_generator_py
+[0.077s] [35m[1mConsolidate compiler generated dependencies of target data_msgs__rosidl_typesupport_introspection_c__pyext[0m
+[0.077s] [35m[1mConsolidate compiler generated dependencies of target data_msgs__rosidl_typesupport_fastrtps_c__pyext[0m
+[0.077s] [35m[1mConsolidate compiler generated dependencies of target data_msgs__rosidl_typesupport_c__pyext[0m
+[0.081s] [ 94%] Built target data_msgs__rosidl_typesupport_c__pyext
+[0.082s] [100%] Built target data_msgs__rosidl_typesupport_fastrtps_c__pyext
+[0.082s] [100%] Built target data_msgs__rosidl_typesupport_introspection_c__pyext
+[0.113s] running egg_info
+[0.113s] writing data_msgs.egg-info/PKG-INFO
+[0.113s] writing dependency_links to data_msgs.egg-info/dependency_links.txt
+[0.113s] writing top-level names to data_msgs.egg-info/top_level.txt
+[0.114s] reading manifest file 'data_msgs.egg-info/SOURCES.txt'
+[0.114s] writing manifest file 'data_msgs.egg-info/SOURCES.txt'
+[0.124s] [100%] Built target ament_cmake_python_build_data_msgs_egg
+[0.129s] Invoked command in '/root/pika_ros/build_new/data_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/pika_ros/install_new/pika_custom_tools:/root/pika_ros/install/piper:/opt/ros/humble /usr/bin/cmake --build /root/pika_ros/build_new/data_msgs -- -j24 -l24
+[0.134s] Invoking command in '/root/pika_ros/build_new/data_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/pika_ros/install_new/pika_custom_tools:/root/pika_ros/install/piper:/opt/ros/humble /usr/bin/cmake --install /root/pika_ros/build_new/data_msgs
+[0.136s] -- Install configuration: "Release"
+[0.137s] -- Execute custom install script
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/ament_index/resource_index/rosidl_interfaces/data_msgs
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/arm_control_status.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/capture_status.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__functions.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__struct.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__type_support.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__functions.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__struct.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__type_support.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__functions.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__struct.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__type_support.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__functions.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__struct.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__type_support.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__functions.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__struct.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__type_support.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/gripper.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/localization_status.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/rosidl_generator_c__visibility_control.h
+[0.137s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/teleop_status.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/capture_service.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__functions.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__struct.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__type_support.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/library_path.sh
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/library_path.dsv
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__rosidl_typesupport_fastrtps_c.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__rosidl_typesupport_fastrtps_c.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__rosidl_typesupport_fastrtps_c.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__rosidl_typesupport_fastrtps_c.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__rosidl_typesupport_fastrtps_c.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__rosidl_typesupport_fastrtps_c.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__rosidl_typesupport_introspection_c.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__rosidl_typesupport_introspection_c.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__rosidl_typesupport_introspection_c.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__rosidl_typesupport_introspection_c.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__rosidl_typesupport_introspection_c.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[0.138s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__rosidl_typesupport_introspection_c.h
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/arm_control_status.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/capture_status.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__builder.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__struct.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__traits.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__type_support.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__builder.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__struct.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__traits.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__type_support.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__builder.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__struct.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__traits.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__type_support.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__builder.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__struct.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__traits.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__type_support.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__builder.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__struct.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__traits.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__type_support.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/gripper.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/localization_status.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/teleop_status.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/capture_service.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__builder.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__struct.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__traits.hpp
+[0.139s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__type_support.hpp
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__rosidl_typesupport_fastrtps_cpp.hpp
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__rosidl_typesupport_fastrtps_cpp.hpp
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__rosidl_typesupport_fastrtps_cpp.hpp
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__rosidl_typesupport_fastrtps_cpp.hpp
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__rosidl_typesupport_fastrtps_cpp.hpp
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__rosidl_typesupport_fastrtps_cpp.hpp
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__rosidl_typesupport_introspection_cpp.hpp
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__rosidl_typesupport_introspection_cpp.hpp
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__rosidl_typesupport_introspection_cpp.hpp
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__rosidl_typesupport_introspection_cpp.hpp
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__rosidl_typesupport_introspection_cpp.hpp
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__rosidl_typesupport_introspection_cpp.hpp
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/pythonpath.sh
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/pythonpath.dsv
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[0.140s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/__init__.py
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/_data_msgs_s.ep.rosidl_typesupport_c.c
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/_data_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/_data_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/libdata_msgs__rosidl_generator_py.so
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/__init__.py
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_arm_control_status.py
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_arm_control_status_s.c
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_capture_status.py
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_capture_status_s.c
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_gripper.py
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_gripper_s.c
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_localization_status.py
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_localization_status_s.c
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_teleop_status.py
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_teleop_status_s.c
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv/__init__.py
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv/_capture_service.py
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv/_capture_service_s.c
+[0.141s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/Gripper.idl
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/CaptureStatus.idl
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/TeleopStatus.idl
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/LocalizationStatus.idl
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/ArmControlStatus.idl
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/srv/CaptureService.idl
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/Gripper.msg
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/CaptureStatus.msg
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/TeleopStatus.msg
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/LocalizationStatus.msg
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/ArmControlStatus.msg
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/srv/CaptureService.srv
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/srv/CaptureService_Request.msg
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/srv/CaptureService_Response.msg
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/ament_index/resource_index/package_run_dependencies/data_msgs
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/ament_index/resource_index/parent_prefix_path/data_msgs
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/ament_prefix_path.sh
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/ament_prefix_path.dsv
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/path.sh
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/path.dsv
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/local_setup.bash
+[0.142s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/local_setup.sh
+[0.143s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/local_setup.zsh
+[0.143s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/local_setup.dsv
+[0.143s] -- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/package.dsv
+[0.146s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/ament_index/resource_index/packages/data_msgs
+[0.146s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/rosidl_cmake-extras.cmake
+[0.146s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.146s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.146s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[0.146s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[0.146s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[0.146s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[0.146s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgsConfig.cmake
+[0.146s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgsConfig-version.cmake
+[0.146s] -- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/share/data_msgs/package.xml
+[0.146s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_generator_c.so
+[0.146s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_fastrtps_c.so
+[0.146s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_introspection_c.so
+[0.146s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_c.so
+[0.146s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_fastrtps_cpp.so
+[0.147s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_introspection_cpp.so
+[0.147s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_cpp.so
+[0.161s] Listing '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs'...
+[0.161s] Listing '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg'...
+[0.161s] Listing '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv'...
+[0.163s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_generator_py.so
+[0.163s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_generator_cExport.cmake
+[0.163s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_generator_cExport-release.cmake
+[0.163s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[0.163s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_typesupport_fastrtps_cExport-release.cmake
+[0.163s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_introspection_cExport.cmake
+[0.163s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_introspection_cExport-release.cmake
+[0.163s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_cExport.cmake
+[0.163s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_cExport-release.cmake
+[0.163s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_generator_cppExport.cmake
+[0.163s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[0.163s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake
+[0.163s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[0.163s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_introspection_cppExport-release.cmake
+[0.163s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_cppExport.cmake
+[0.164s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_cppExport-release.cmake
+[0.164s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_generator_pyExport.cmake
+[0.164s] -- Up-to-date: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_generator_pyExport-release.cmake
+[0.165s] Invoked command in '/root/pika_ros/build_new/data_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/pika_ros/install_new/pika_custom_tools:/root/pika_ros/install/piper:/opt/ros/humble /usr/bin/cmake --install /root/pika_ros/build_new/data_msgs

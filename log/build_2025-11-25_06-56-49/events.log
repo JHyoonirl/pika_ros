@@ -1,0 +1,419 @@
+[0.000000] (-) TimerEvent: {}
+[0.000213] (-) JobUnselected: {'identifier': 'data_tools'}
+[0.000298] (-) JobUnselected: {'identifier': 'pika_remote_piper'}
+[0.000358] (-) JobUnselected: {'identifier': 'piper'}
+[0.000407] (-) JobUnselected: {'identifier': 'piper_description'}
+[0.000418] (-) JobUnselected: {'identifier': 'piper_msgs'}
+[0.000426] (-) JobUnselected: {'identifier': 'realsense2_camera'}
+[0.000435] (-) JobUnselected: {'identifier': 'realsense2_camera_msgs'}
+[0.000456] (-) JobUnselected: {'identifier': 'realsense2_description'}
+[0.000465] (-) JobUnselected: {'identifier': 'sensor_tools'}
+[0.000476] (data_msgs) JobQueued: {'identifier': 'data_msgs', 'dependencies': OrderedDict()}
+[0.000488] (pika_custom_tools) JobQueued: {'identifier': 'pika_custom_tools', 'dependencies': OrderedDict([('data_msgs', '/root/pika_ros/install_new/data_msgs')])}
+[0.000500] (data_msgs) JobStarted: {'identifier': 'data_msgs'}
+[0.004938] (data_msgs) JobProgress: {'identifier': 'data_msgs', 'progress': 'cmake'}
+[0.005238] (data_msgs) Command: {'cmd': ['/usr/bin/cmake', '/root/pika_ros/src/data_msgs', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/root/pika_ros/install_new/data_msgs'], 'cwd': '/root/pika_ros/build_new/data_msgs', 'env': OrderedDict([('HOSTNAME', 'irl-desktop'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/root/pika_ros/install/realsense2_camera/lib:/root/pika_ros/install/realsense2_camera_msgs/lib:/root/pika_ros/install/piper_msgs/lib:/root/pika_ros/install/pika_locator/lib:/root/pika_ros/install/libsurvive/lib:/root/pika_ros/install/data_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/root'), ('ROS_PYTHON_VERSION', '3'), ('pika_R_code', 'LHR-FBF3A347'), ('COLCON_PREFIX_PATH', '/root/pika_ros/install_new:/root/pika_ros/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/root/pika_ros/install/libsurvive/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '10'), ('AMENT_PREFIX_PATH', '/root/pika_ros/install_new/pika_custom_tools:/root/pika_ros/install/sensor_tools:/root/pika_ros/install/realsense2_description:/root/pika_ros/install/realsense2_camera:/root/pika_ros/install/realsense2_camera_msgs:/root/pika_ros/install/piper_msgs:/root/pika_ros/install/piper_description:/root/pika_ros/install/piper:/root/pika_ros/install/pika_remote_piper:/root/pika_ros/install/pika_locator:/root/pika_ros/install/data_tools:/root/pika_ros/install/data_msgs:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/root/pika_ros/build_new/data_msgs'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/pika_ros/build_new/pika_custom_tools:/root/pika_ros/install_new/pika_custom_tools/lib/python3.10/site-packages:/root/pika_ros/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:/root/pika_ros/install/piper_msgs/local/lib/python3.10/dist-packages:/root/pika_ros/install/piper/lib/python3.10/site-packages:/root/pika_ros/install/data_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/pika_ros/install/sensor_tools:/root/pika_ros/install/realsense2_description:/root/pika_ros/install/realsense2_camera:/root/pika_ros/install/realsense2_camera_msgs:/root/pika_ros/install/piper_msgs:/root/pika_ros/install/piper_description:/root/pika_ros/install/pika_remote_piper:/root/pika_ros/install/pika_locator:/root/pika_ros/install/data_tools:/root/pika_ros/install/data_msgs:/root/pika_ros/install_new/pika_custom_tools:/root/pika_ros/install/piper:/opt/ros/humble')]), 'shell': False}
+[0.035173] (data_msgs) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.061870] (data_msgs) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.065224] (data_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.094151] (data_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.097429] (data_msgs) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.097563] (data_msgs) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.097700] (data_msgs) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.098866] (data_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.099685] (-) TimerEvent: {}
+[0.130534] (data_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.133516] (data_msgs) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.133653] (data_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.133859] (data_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.136474] (data_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.194859] (data_msgs) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.199782] (-) TimerEvent: {}
+[0.226926] (data_msgs) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.249441] (data_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.252327] (data_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.256965] (data_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.282641] (data_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.299843] (-) TimerEvent: {}
+[0.302165] (data_msgs) StdoutLine: {'line': b'-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.336238] (data_msgs) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.338408] (data_msgs) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.387380] (data_msgs) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.399902] (-) TimerEvent: {}
+[0.400320] (data_msgs) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.420959] (data_msgs) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.426114] (data_msgs) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[0.455882] (data_msgs) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[0.456048] (data_msgs) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[0.485451] (data_msgs) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[0.486006] (data_msgs) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[0.499970] (-) TimerEvent: {}
+[0.516050] (data_msgs) StdoutLine: {'line': b'-- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)\n'}
+[0.517106] (data_msgs) StdoutLine: {'line': b'-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)\n'}
+[0.541359] (data_msgs) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[0.600044] (-) TimerEvent: {}
+[0.685524] (data_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.700100] (-) TimerEvent: {}
+[0.776026] (data_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.800161] (-) TimerEvent: {}
+[0.888765] (data_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.896643] (data_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[0.897862] (data_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[0.900182] (-) TimerEvent: {}
+[0.907404] (data_msgs) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[0.907490] (data_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.907515] (data_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[0.907534] (data_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[0.915014] (data_msgs) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[0.937227] (data_msgs) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.953010] (data_msgs) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[0.955483] (data_msgs) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.956859] (data_msgs) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.958665] (data_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.973409] (data_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[0.977420] (data_msgs) StdoutLine: {'line': b'-- Build files have been written to: /root/pika_ros/build_new/data_msgs\n'}
+[0.982461] (data_msgs) CommandEnded: {'returncode': 0}
+[0.982695] (data_msgs) JobProgress: {'identifier': 'data_msgs', 'progress': 'build'}
+[0.983005] (data_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/pika_ros/build_new/data_msgs', '--', '-j24', '-l24'], 'cwd': '/root/pika_ros/build_new/data_msgs', 'env': OrderedDict([('HOSTNAME', 'irl-desktop'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/root/pika_ros/install/realsense2_camera/lib:/root/pika_ros/install/realsense2_camera_msgs/lib:/root/pika_ros/install/piper_msgs/lib:/root/pika_ros/install/pika_locator/lib:/root/pika_ros/install/libsurvive/lib:/root/pika_ros/install/data_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/root'), ('ROS_PYTHON_VERSION', '3'), ('pika_R_code', 'LHR-FBF3A347'), ('COLCON_PREFIX_PATH', '/root/pika_ros/install_new:/root/pika_ros/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/root/pika_ros/install/libsurvive/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '10'), ('AMENT_PREFIX_PATH', '/root/pika_ros/install_new/pika_custom_tools:/root/pika_ros/install/sensor_tools:/root/pika_ros/install/realsense2_description:/root/pika_ros/install/realsense2_camera:/root/pika_ros/install/realsense2_camera_msgs:/root/pika_ros/install/piper_msgs:/root/pika_ros/install/piper_description:/root/pika_ros/install/piper:/root/pika_ros/install/pika_remote_piper:/root/pika_ros/install/pika_locator:/root/pika_ros/install/data_tools:/root/pika_ros/install/data_msgs:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/root/pika_ros/build_new/data_msgs'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/pika_ros/build_new/pika_custom_tools:/root/pika_ros/install_new/pika_custom_tools/lib/python3.10/site-packages:/root/pika_ros/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:/root/pika_ros/install/piper_msgs/local/lib/python3.10/dist-packages:/root/pika_ros/install/piper/lib/python3.10/site-packages:/root/pika_ros/install/data_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/pika_ros/install/sensor_tools:/root/pika_ros/install/realsense2_description:/root/pika_ros/install/realsense2_camera:/root/pika_ros/install/realsense2_camera_msgs:/root/pika_ros/install/piper_msgs:/root/pika_ros/install/piper_description:/root/pika_ros/install/pika_remote_piper:/root/pika_ros/install/pika_locator:/root/pika_ros/install/data_tools:/root/pika_ros/install/data_msgs:/root/pika_ros/install_new/pika_custom_tools:/root/pika_ros/install/piper:/opt/ros/humble')]), 'shell': False}
+[1.000247] (-) TimerEvent: {}
+[1.002328] (data_msgs) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[1.005791] (data_msgs) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.008942] (data_msgs) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_symlink_data_msgs\n'}
+[1.086053] (data_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[1.086281] (data_msgs) StdoutLine: {'line': b'creating data_msgs.egg-info\n'}
+[1.086338] (data_msgs) StdoutLine: {'line': b'writing data_msgs.egg-info/PKG-INFO\n'}
+[1.086400] (data_msgs) StdoutLine: {'line': b'writing dependency_links to data_msgs.egg-info/dependency_links.txt\n'}
+[1.086466] (data_msgs) StdoutLine: {'line': b'writing top-level names to data_msgs.egg-info/top_level.txt\n'}
+[1.086496] (data_msgs) StdoutLine: {'line': b"writing manifest file 'data_msgs.egg-info/SOURCES.txt'\n"}
+[1.087127] (data_msgs) StdoutLine: {'line': b"reading manifest file 'data_msgs.egg-info/SOURCES.txt'\n"}
+[1.087336] (data_msgs) StdoutLine: {'line': b"writing manifest file 'data_msgs.egg-info/SOURCES.txt'\n"}
+[1.098111] (data_msgs) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_build_data_msgs_egg\n'}
+[1.100313] (-) TimerEvent: {}
+[1.200520] (-) TimerEvent: {}
+[1.208676] (data_msgs) StdoutLine: {'line': b'[  2%] Built target data_msgs__cpp\n'}
+[1.209924] (data_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_c.dir/rosidl_generator_c/data_msgs/msg/detail/capture_status__functions.c.o\x1b[0m\n'}
+[1.210007] (data_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_c.dir/rosidl_generator_c/data_msgs/msg/detail/teleop_status__functions.c.o\x1b[0m\n'}
+[1.210066] (data_msgs) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_c.dir/rosidl_generator_c/data_msgs/msg/detail/gripper__functions.c.o\x1b[0m\n'}
+[1.210109] (data_msgs) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_c.dir/rosidl_generator_c/data_msgs/msg/detail/arm_control_status__functions.c.o\x1b[0m\n'}
+[1.210525] (data_msgs) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_c.dir/rosidl_generator_c/data_msgs/srv/detail/capture_service__functions.c.o\x1b[0m\n'}
+[1.210593] (data_msgs) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_c.dir/rosidl_generator_c/data_msgs/msg/detail/localization_status__functions.c.o\x1b[0m\n'}
+[1.212821] (data_msgs) StdoutLine: {'line': b'[ 14%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.212915] (data_msgs) StdoutLine: {'line': b'[ 14%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.213122] (data_msgs) StdoutLine: {'line': b'[ 15%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[1.276356] (data_msgs) StdoutLine: {'line': b'[ 16%] \x1b[32m\x1b[1mLinking C shared library libdata_msgs__rosidl_generator_c.so\x1b[0m\n'}
+[1.292348] (data_msgs) StdoutLine: {'line': b'[ 16%] Built target data_msgs__rosidl_generator_c\n'}
+[1.296364] (data_msgs) StdoutLine: {'line': b'[ 19%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.296441] (data_msgs) StdoutLine: {'line': b'[ 19%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[1.297124] (data_msgs) StdoutLine: {'line': b'[ 21%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.300569] (-) TimerEvent: {}
+[1.356451] (data_msgs) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/data_msgs/msg/gripper__type_support.cpp.o\x1b[0m\n'}
+[1.356610] (data_msgs) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/data_msgs/msg/capture_status__type_support.cpp.o\x1b[0m\n'}
+[1.356658] (data_msgs) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/data_msgs/msg/teleop_status__type_support.cpp.o\x1b[0m\n'}
+[1.356694] (data_msgs) StdoutLine: {'line': b'[ 26%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/data_msgs/msg/localization_status__type_support.cpp.o\x1b[0m\n'}
+[1.356763] (data_msgs) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/data_msgs/msg/arm_control_status__type_support.cpp.o\x1b[0m\n'}
+[1.356985] (data_msgs) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/data_msgs/srv/capture_service__type_support.cpp.o\x1b[0m\n'}
+[1.381211] (data_msgs) StdoutLine: {'line': b'[ 32%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/data_msgs/msg/detail/gripper__type_support.cpp.o\x1b[0m\n'}
+[1.381356] (data_msgs) StdoutLine: {'line': b'[ 32%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/data_msgs/msg/detail/capture_status__type_support.cpp.o\x1b[0m\n'}
+[1.381471] (data_msgs) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/data_msgs/msg/detail/teleop_status__type_support.cpp.o\x1b[0m\n'}
+[1.381677] (data_msgs) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/data_msgs/msg/detail/localization_status__type_support.cpp.o\x1b[0m\n'}
+[1.381915] (data_msgs) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/data_msgs/srv/detail/capture_service__type_support.cpp.o\x1b[0m\n'}
+[1.382420] (data_msgs) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/data_msgs/msg/detail/arm_control_status__type_support.cpp.o\x1b[0m\n'}
+[1.400645] (-) TimerEvent: {}
+[1.410468] (data_msgs) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/data_msgs/msg/detail/dds_fastrtps/arm_control_status__type_support.cpp.o\x1b[0m\n'}
+[1.411081] (data_msgs) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/data_msgs/msg/detail/dds_fastrtps/gripper__type_support.cpp.o\x1b[0m\n'}
+[1.411146] (data_msgs) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/data_msgs/msg/detail/dds_fastrtps/localization_status__type_support.cpp.o\x1b[0m\n'}
+[1.411187] (data_msgs) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/data_msgs/msg/detail/dds_fastrtps/capture_status__type_support.cpp.o\x1b[0m\n'}
+[1.411978] (data_msgs) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/data_msgs/srv/detail/dds_fastrtps/capture_service__type_support.cpp.o\x1b[0m\n'}
+[1.412069] (data_msgs) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/data_msgs/msg/detail/dds_fastrtps/teleop_status__type_support.cpp.o\x1b[0m\n'}
+[1.488844] (data_msgs) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/data_msgs/msg/teleop_status__type_support.cpp.o\x1b[0m\n'}
+[1.489031] (data_msgs) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/data_msgs/msg/localization_status__type_support.cpp.o\x1b[0m\n'}
+[1.489094] (data_msgs) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/data_msgs/msg/capture_status__type_support.cpp.o\x1b[0m\n'}
+[1.489206] (data_msgs) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/data_msgs/msg/gripper__type_support.cpp.o\x1b[0m\n'}
+[1.499762] (data_msgs) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/data_msgs/msg/arm_control_status__type_support.cpp.o\x1b[0m\n'}
+[1.500716] (-) TimerEvent: {}
+[1.509113] (data_msgs) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/data_msgs/srv/capture_service__type_support.cpp.o\x1b[0m\n'}
+[1.510729] (data_msgs) StdoutLine: {'line': b'[ 56%] \x1b[32m\x1b[1mLinking CXX shared library libdata_msgs__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[1.524905] (data_msgs) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/data_msgs/msg/detail/gripper__type_support_c.cpp.o\x1b[0m\n'}
+[1.525089] (data_msgs) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/data_msgs/msg/detail/teleop_status__type_support_c.cpp.o\x1b[0m\n'}
+[1.526291] (data_msgs) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/data_msgs/msg/detail/capture_status__type_support_c.cpp.o\x1b[0m\n'}
+[1.526439] (data_msgs) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/data_msgs/msg/detail/localization_status__type_support_c.cpp.o\x1b[0m\n'}
+[1.526484] (data_msgs) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/data_msgs/msg/detail/arm_control_status__type_support_c.cpp.o\x1b[0m\n'}
+[1.526526] (data_msgs) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/data_msgs/srv/detail/capture_service__type_support_c.cpp.o\x1b[0m\n'}
+[1.526626] (data_msgs) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/data_msgs/msg/detail/gripper__type_support.c.o\x1b[0m\n'}
+[1.526667] (data_msgs) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/data_msgs/msg/detail/teleop_status__type_support.c.o\x1b[0m\n'}
+[1.526700] (data_msgs) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/data_msgs/msg/detail/capture_status__type_support.c.o\x1b[0m\n'}
+[1.526730] (data_msgs) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/data_msgs/msg/detail/localization_status__type_support.c.o\x1b[0m\n'}
+[1.536302] (data_msgs) StdoutLine: {'line': b'[ 71%] \x1b[32m\x1b[1mLinking CXX shared library libdata_msgs__rosidl_typesupport_c.so\x1b[0m\n'}
+[1.536477] (data_msgs) StdoutLine: {'line': b'[ 71%] Built target data_msgs__rosidl_typesupport_cpp\n'}
+[1.541173] (data_msgs) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/data_msgs/msg/detail/arm_control_status__type_support.c.o\x1b[0m\n'}
+[1.554145] (data_msgs) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/data_msgs/srv/detail/capture_service__type_support.c.o\x1b[0m\n'}
+[1.564388] (data_msgs) StdoutLine: {'line': b'[ 74%] Built target data_msgs__rosidl_typesupport_c\n'}
+[1.586569] (data_msgs) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking C shared library libdata_msgs__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[1.600832] (-) TimerEvent: {}
+[1.609535] (data_msgs) StdoutLine: {'line': b'[ 76%] Built target data_msgs__rosidl_typesupport_introspection_c\n'}
+[1.670226] (data_msgs) StdoutLine: {'line': b'[ 77%] \x1b[32m\x1b[1mLinking CXX shared library libdata_msgs__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[1.700684] (data_msgs) StdoutLine: {'line': b'[ 77%] Built target data_msgs__rosidl_typesupport_introspection_cpp\n'}
+[1.700827] (-) TimerEvent: {}
+[1.707533] (data_msgs) StdoutLine: {'line': b'[ 78%] \x1b[32m\x1b[1mLinking CXX shared library libdata_msgs__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[1.731957] (data_msgs) StdoutLine: {'line': b'[ 80%] \x1b[32m\x1b[1mLinking CXX shared library libdata_msgs__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[1.737917] (data_msgs) StdoutLine: {'line': b'[ 80%] Built target data_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[1.760601] (data_msgs) StdoutLine: {'line': b'[ 80%] Built target data_msgs__rosidl_typesupport_fastrtps_c\n'}
+[1.768364] (data_msgs) StdoutLine: {'line': b'[ 80%] Built target data_msgs\n'}
+[1.776030] (data_msgs) StdoutLine: {'line': b'[ 81%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[1.800899] (-) TimerEvent: {}
+[1.901067] (-) TimerEvent: {}
+[2.001221] (-) TimerEvent: {}
+[2.069377] (data_msgs) StdoutLine: {'line': b'[ 81%] Built target data_msgs__py\n'}
+[2.076916] (data_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_py.dir/rosidl_generator_py/data_msgs/msg/_teleop_status_s.c.o\x1b[0m\n'}
+[2.076988] (data_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_py.dir/rosidl_generator_py/data_msgs/msg/_gripper_s.c.o\x1b[0m\n'}
+[2.077015] (data_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_py.dir/rosidl_generator_py/data_msgs/msg/_capture_status_s.c.o\x1b[0m\n'}
+[2.077036] (data_msgs) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_py.dir/rosidl_generator_py/data_msgs/msg/_arm_control_status_s.c.o\x1b[0m\n'}
+[2.077253] (data_msgs) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_py.dir/rosidl_generator_py/data_msgs/srv/_capture_service_s.c.o\x1b[0m\n'}
+[2.077419] (data_msgs) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_py.dir/rosidl_generator_py/data_msgs/msg/_localization_status_s.c.o\x1b[0m\n'}
+[2.101326] (-) TimerEvent: {}
+[2.164502] (data_msgs) StdoutLine: {'line': b'[ 91%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/data_msgs/libdata_msgs__rosidl_generator_py.so\x1b[0m\n'}
+[2.181769] (data_msgs) StdoutLine: {'line': b'[ 91%] Built target data_msgs__rosidl_generator_py\n'}
+[2.189725] (data_msgs) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/data_msgs/_data_msgs_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[2.189916] (data_msgs) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/data_msgs/_data_msgs_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[2.190104] (data_msgs) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/data_msgs/_data_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[2.201387] (-) TimerEvent: {}
+[2.264731] (data_msgs) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/data_msgs/data_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[2.264910] (data_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/data_msgs/data_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[2.264946] (data_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/data_msgs/data_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[2.279600] (data_msgs) StdoutLine: {'line': b'[100%] Built target data_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[2.279745] (data_msgs) StdoutLine: {'line': b'[100%] Built target data_msgs__rosidl_typesupport_c__pyext\n'}
+[2.279794] (data_msgs) StdoutLine: {'line': b'[100%] Built target data_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[2.284580] (data_msgs) CommandEnded: {'returncode': 0}
+[2.284880] (data_msgs) JobProgress: {'identifier': 'data_msgs', 'progress': 'install'}
+[2.288128] (data_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/pika_ros/build_new/data_msgs'], 'cwd': '/root/pika_ros/build_new/data_msgs', 'env': OrderedDict([('HOSTNAME', 'irl-desktop'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/root/pika_ros/install/realsense2_camera/lib:/root/pika_ros/install/realsense2_camera_msgs/lib:/root/pika_ros/install/piper_msgs/lib:/root/pika_ros/install/pika_locator/lib:/root/pika_ros/install/libsurvive/lib:/root/pika_ros/install/data_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/root'), ('ROS_PYTHON_VERSION', '3'), ('pika_R_code', 'LHR-FBF3A347'), ('COLCON_PREFIX_PATH', '/root/pika_ros/install_new:/root/pika_ros/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/root/pika_ros/install/libsurvive/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '10'), ('AMENT_PREFIX_PATH', '/root/pika_ros/install_new/pika_custom_tools:/root/pika_ros/install/sensor_tools:/root/pika_ros/install/realsense2_description:/root/pika_ros/install/realsense2_camera:/root/pika_ros/install/realsense2_camera_msgs:/root/pika_ros/install/piper_msgs:/root/pika_ros/install/piper_description:/root/pika_ros/install/piper:/root/pika_ros/install/pika_remote_piper:/root/pika_ros/install/pika_locator:/root/pika_ros/install/data_tools:/root/pika_ros/install/data_msgs:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/root/pika_ros/build_new/data_msgs'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/pika_ros/build_new/pika_custom_tools:/root/pika_ros/install_new/pika_custom_tools/lib/python3.10/site-packages:/root/pika_ros/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:/root/pika_ros/install/piper_msgs/local/lib/python3.10/dist-packages:/root/pika_ros/install/piper/lib/python3.10/site-packages:/root/pika_ros/install/data_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/pika_ros/install/sensor_tools:/root/pika_ros/install/realsense2_description:/root/pika_ros/install/realsense2_camera:/root/pika_ros/install/realsense2_camera_msgs:/root/pika_ros/install/piper_msgs:/root/pika_ros/install/piper_description:/root/pika_ros/install/pika_remote_piper:/root/pika_ros/install/pika_locator:/root/pika_ros/install/data_tools:/root/pika_ros/install/data_msgs:/root/pika_ros/install_new/pika_custom_tools:/root/pika_ros/install/piper:/opt/ros/humble')]), 'shell': False}
+[2.291120] (data_msgs) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[2.291400] (data_msgs) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[2.291510] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/ament_index/resource_index/rosidl_interfaces/data_msgs\n'}
+[2.294794] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/arm_control_status.h\n'}
+[2.297729] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/capture_status.h\n'}
+[2.300635] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__functions.h\n'}
+[2.301440] (-) TimerEvent: {}
+[2.303507] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__struct.h\n'}
+[2.306419] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__type_support.h\n'}
+[2.309474] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__functions.h\n'}
+[2.312381] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__struct.h\n'}
+[2.315239] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__type_support.h\n'}
+[2.318437] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__functions.h\n'}
+[2.321615] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__struct.h\n'}
+[2.325174] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__type_support.h\n'}
+[2.328183] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__functions.h\n'}
+[2.331084] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__struct.h\n'}
+[2.333915] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__type_support.h\n'}
+[2.336757] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__functions.h\n'}
+[2.339851] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__struct.h\n'}
+[2.342692] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__type_support.h\n'}
+[2.345525] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/gripper.h\n'}
+[2.348422] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/localization_status.h\n'}
+[2.351325] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[2.354104] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/teleop_status.h\n'}
+[2.357297] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/capture_service.h\n'}
+[2.360253] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__functions.h\n'}
+[2.363150] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__struct.h\n'}
+[2.366290] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__type_support.h\n'}
+[2.369194] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/library_path.sh\n'}
+[2.372024] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/library_path.dsv\n'}
+[2.375022] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__rosidl_typesupport_fastrtps_c.h\n'}
+[2.377825] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__rosidl_typesupport_fastrtps_c.h\n'}
+[2.380604] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__rosidl_typesupport_fastrtps_c.h\n'}
+[2.383478] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__rosidl_typesupport_fastrtps_c.h\n'}
+[2.386262] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__rosidl_typesupport_fastrtps_c.h\n'}
+[2.389640] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[2.392523] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__rosidl_typesupport_fastrtps_c.h\n'}
+[2.395414] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__rosidl_typesupport_introspection_c.h\n'}
+[2.398195] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__rosidl_typesupport_introspection_c.h\n'}
+[2.401484] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__rosidl_typesupport_introspection_c.h\n'}
+[2.401555] (-) TimerEvent: {}
+[2.404509] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__rosidl_typesupport_introspection_c.h\n'}
+[2.407432] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__rosidl_typesupport_introspection_c.h\n'}
+[2.410275] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[2.413121] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__rosidl_typesupport_introspection_c.h\n'}
+[2.416553] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/arm_control_status.hpp\n'}
+[2.419482] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/capture_status.hpp\n'}
+[2.422377] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__builder.hpp\n'}
+[2.425522] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__struct.hpp\n'}
+[2.428446] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__traits.hpp\n'}
+[2.431412] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__type_support.hpp\n'}
+[2.434267] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__builder.hpp\n'}
+[2.437090] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__struct.hpp\n'}
+[2.439943] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__traits.hpp\n'}
+[2.443191] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__type_support.hpp\n'}
+[2.446132] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__builder.hpp\n'}
+[2.449355] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__struct.hpp\n'}
+[2.452260] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__traits.hpp\n'}
+[2.455069] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__type_support.hpp\n'}
+[2.458395] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__builder.hpp\n'}
+[2.461709] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__struct.hpp\n'}
+[2.464660] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__traits.hpp\n'}
+[2.467471] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__type_support.hpp\n'}
+[2.470670] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__builder.hpp\n'}
+[2.473552] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__struct.hpp\n'}
+[2.476359] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__traits.hpp\n'}
+[2.479486] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__type_support.hpp\n'}
+[2.482448] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/gripper.hpp\n'}
+[2.485248] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/localization_status.hpp\n'}
+[2.488033] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[2.490896] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/teleop_status.hpp\n'}
+[2.493915] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/capture_service.hpp\n'}
+[2.496863] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__builder.hpp\n'}
+[2.500021] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__struct.hpp\n'}
+[2.501623] (-) TimerEvent: {}
+[2.503007] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__traits.hpp\n'}
+[2.505878] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__type_support.hpp\n'}
+[2.509125] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.512072] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.515083] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.517988] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.520810] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.523635] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[2.526896] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.529952] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.533135] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.536128] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.539011] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.542480] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.545345] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.548230] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/pythonpath.sh\n'}
+[2.551054] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/pythonpath.dsv\n'}
+[2.554350] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[2.557251] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[2.560340] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[2.563263] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[2.566605] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/__init__.py\n'}
+[2.569484] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/_data_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[2.572262] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/_data_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[2.575082] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/_data_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[2.577863] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[2.581136] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[2.584417] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[2.587345] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/libdata_msgs__rosidl_generator_py.so\n'}
+[2.590685] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/__init__.py\n'}
+[2.593685] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_arm_control_status.py\n'}
+[2.597088] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_arm_control_status_s.c\n'}
+[2.599990] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_capture_status.py\n'}
+[2.601677] (-) TimerEvent: {}
+[2.602784] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_capture_status_s.c\n'}
+[2.605964] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_gripper.py\n'}
+[2.609136] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_gripper_s.c\n'}
+[2.612241] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_localization_status.py\n'}
+[2.615169] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_localization_status_s.c\n'}
+[2.618565] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_teleop_status.py\n'}
+[2.621630] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_teleop_status_s.c\n'}
+[2.624600] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv/__init__.py\n'}
+[2.627781] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv/_capture_service.py\n'}
+[2.630674] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv/_capture_service_s.c\n'}
+[2.633613] (data_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[2.633693] (data_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[2.633768] (data_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[2.633837] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/Gripper.idl\n'}
+[2.636881] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/CaptureStatus.idl\n'}
+[2.639847] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/TeleopStatus.idl\n'}
+[2.642896] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/LocalizationStatus.idl\n'}
+[2.645832] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/ArmControlStatus.idl\n'}
+[2.648751] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/srv/CaptureService.idl\n'}
+[2.651694] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/Gripper.msg\n'}
+[2.654551] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/CaptureStatus.msg\n'}
+[2.657703] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/TeleopStatus.msg\n'}
+[2.660633] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/LocalizationStatus.msg\n'}
+[2.663491] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/ArmControlStatus.msg\n'}
+[2.666581] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/srv/CaptureService.srv\n'}
+[2.669598] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/srv/CaptureService_Request.msg\n'}
+[2.672566] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/srv/CaptureService_Response.msg\n'}
+[2.675459] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/ament_index/resource_index/package_run_dependencies/data_msgs\n'}
+[2.678307] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/ament_index/resource_index/parent_prefix_path/data_msgs\n'}
+[2.681617] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/ament_prefix_path.sh\n'}
+[2.684722] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/ament_prefix_path.dsv\n'}
+[2.687715] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/path.sh\n'}
+[2.690915] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/path.dsv\n'}
+[2.693870] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/local_setup.bash\n'}
+[2.697129] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/local_setup.sh\n'}
+[2.700165] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/local_setup.zsh\n'}
+[2.701734] (-) TimerEvent: {}
+[2.702988] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/local_setup.dsv\n'}
+[2.706155] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/package.dsv\n'}
+[2.709178] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/ament_index/resource_index/packages/data_msgs\n'}
+[2.712431] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[2.715664] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[2.718750] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[2.721702] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[2.724557] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[2.727839] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[2.731150] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[2.734121] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgsConfig.cmake\n'}
+[2.737262] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgsConfig-version.cmake\n'}
+[2.740677] (data_msgs) StdoutLine: {'line': b'-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/package.xml\n'}
+[2.743701] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_generator_c.so\n'}
+[2.743839] (data_msgs) StdoutLine: {'line': b'-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_generator_c.so" to ""\n'}
+[2.743882] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[2.743954] (data_msgs) StdoutLine: {'line': b'-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[2.743989] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_introspection_c.so\n'}
+[2.744058] (data_msgs) StdoutLine: {'line': b'-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_introspection_c.so" to ""\n'}
+[2.744091] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_c.so\n'}
+[2.744145] (data_msgs) StdoutLine: {'line': b'-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_c.so" to ""\n'}
+[2.744178] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[2.744265] (data_msgs) StdoutLine: {'line': b'-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[2.744302] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[2.744371] (data_msgs) StdoutLine: {'line': b'-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[2.744405] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_cpp.so\n'}
+[2.744462] (data_msgs) StdoutLine: {'line': b'-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_cpp.so" to ""\n'}
+[2.763983] (data_msgs) StdoutLine: {'line': b"Listing '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs'...\n"}
+[2.764045] (data_msgs) StdoutLine: {'line': b"Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/__init__.py'...\n"}
+[2.764079] (data_msgs) StdoutLine: {'line': b"Listing '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg'...\n"}
+[2.764108] (data_msgs) StdoutLine: {'line': b"Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/__init__.py'...\n"}
+[2.764136] (data_msgs) StdoutLine: {'line': b"Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_arm_control_status.py'...\n"}
+[2.764164] (data_msgs) StdoutLine: {'line': b"Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_capture_status.py'...\n"}
+[2.764196] (data_msgs) StdoutLine: {'line': b"Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_gripper.py'...\n"}
+[2.764223] (data_msgs) StdoutLine: {'line': b"Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_localization_status.py'...\n"}
+[2.764241] (data_msgs) StdoutLine: {'line': b"Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_teleop_status.py'...\n"}
+[2.764259] (data_msgs) StdoutLine: {'line': b"Listing '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv'...\n"}
+[2.764278] (data_msgs) StdoutLine: {'line': b"Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv/__init__.py'...\n"}
+[2.764298] (data_msgs) StdoutLine: {'line': b"Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv/_capture_service.py'...\n"}
+[2.766514] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_generator_py.so\n'}
+[2.766671] (data_msgs) StdoutLine: {'line': b'-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_generator_py.so" to ""\n'}
+[2.766704] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_generator_cExport.cmake\n'}
+[2.766761] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_generator_cExport-release.cmake\n'}
+[2.766814] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[2.766862] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_typesupport_fastrtps_cExport-release.cmake\n'}
+[2.766913] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[2.766957] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_introspection_cExport-release.cmake\n'}
+[2.767005] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_cExport.cmake\n'}
+[2.767049] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_cExport-release.cmake\n'}
+[2.767099] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_generator_cppExport.cmake\n'}
+[2.767149] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[2.767211] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake\n'}
+[2.767241] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[2.767271] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_introspection_cppExport-release.cmake\n'}
+[2.767306] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[2.767335] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_cppExport-release.cmake\n'}
+[2.767366] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_generator_pyExport.cmake\n'}
+[2.767396] (data_msgs) StdoutLine: {'line': b'-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_generator_pyExport-release.cmake\n'}
+[2.768748] (data_msgs) CommandEnded: {'returncode': 0}
+[2.777009] (data_msgs) JobEnded: {'identifier': 'data_msgs', 'rc': 0}
+[2.777379] (pika_custom_tools) JobStarted: {'identifier': 'pika_custom_tools'}
+[2.801811] (-) TimerEvent: {}
+[2.901987] (-) TimerEvent: {}
+[2.993886] (pika_custom_tools) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/root/pika_ros/build_new/pika_custom_tools/build', '--no-deps', 'symlink_data'], 'cwd': '/root/pika_ros/build_new/pika_custom_tools', 'env': {'HOSTNAME': 'irl-desktop', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/root/pika_ros/install_new/data_msgs/lib:/root/pika_ros/install/realsense2_camera/lib:/root/pika_ros/install/realsense2_camera_msgs/lib:/root/pika_ros/install/piper_msgs/lib:/root/pika_ros/install/pika_locator/lib:/root/pika_ros/install/libsurvive/lib:/root/pika_ros/install/data_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/root', 'ROS_PYTHON_VERSION': '3', 'pika_R_code': 'LHR-FBF3A347', 'COLCON_PREFIX_PATH': '/root/pika_ros/install_new:/root/pika_ros/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/root/pika_ros/install/libsurvive/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'ROS_DOMAIN_ID': '10', 'AMENT_PREFIX_PATH': '/root/pika_ros/install_new/data_msgs:/root/pika_ros/install_new/pika_custom_tools:/root/pika_ros/install/sensor_tools:/root/pika_ros/install/realsense2_description:/root/pika_ros/install/realsense2_camera:/root/pika_ros/install/realsense2_camera_msgs:/root/pika_ros/install/piper_msgs:/root/pika_ros/install/piper_description:/root/pika_ros/install/piper:/root/pika_ros/install/pika_remote_piper:/root/pika_ros/install/pika_locator:/root/pika_ros/install/data_tools:/root/pika_ros/install/data_msgs:/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'PWD': '/root/pika_ros/build_new/pika_custom_tools', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/root/pika_ros/build_new/pika_custom_tools/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/pika_ros/install_new/pika_custom_tools/lib/python3.10/site-packages:/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages:/root/pika_ros/build_new/pika_custom_tools:/root/pika_ros/install_new/pika_custom_tools/lib/python3.10/site-packages:/root/pika_ros/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:/root/pika_ros/install/piper_msgs/local/lib/python3.10/dist-packages:/root/pika_ros/install/piper/lib/python3.10/site-packages:/root/pika_ros/install/data_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/root/pika_ros/install_new/data_msgs:/root/pika_ros/install/sensor_tools:/root/pika_ros/install/realsense2_description:/root/pika_ros/install/realsense2_camera:/root/pika_ros/install/realsense2_camera_msgs:/root/pika_ros/install/piper_msgs:/root/pika_ros/install/piper_description:/root/pika_ros/install/pika_remote_piper:/root/pika_ros/install/pika_locator:/root/pika_ros/install/data_tools:/root/pika_ros/install/data_msgs'}, 'shell': False}
+[3.002047] (-) TimerEvent: {}
+[3.076209] (pika_custom_tools) StdoutLine: {'line': b'running develop\n'}
+[3.102124] (-) TimerEvent: {}
+[3.106524] (pika_custom_tools) StdoutLine: {'line': b'running egg_info\n'}
+[3.106621] (pika_custom_tools) StdoutLine: {'line': b'writing pika_custom_tools.egg-info/PKG-INFO\n'}
+[3.106683] (pika_custom_tools) StdoutLine: {'line': b'writing dependency_links to pika_custom_tools.egg-info/dependency_links.txt\n'}
+[3.106742] (pika_custom_tools) StdoutLine: {'line': b'writing entry points to pika_custom_tools.egg-info/entry_points.txt\n'}
+[3.106777] (pika_custom_tools) StdoutLine: {'line': b'writing requirements to pika_custom_tools.egg-info/requires.txt\n'}
+[3.106811] (pika_custom_tools) StdoutLine: {'line': b'writing top-level names to pika_custom_tools.egg-info/top_level.txt\n'}
+[3.107286] (pika_custom_tools) StdoutLine: {'line': b"reading manifest file 'pika_custom_tools.egg-info/SOURCES.txt'\n"}
+[3.107547] (pika_custom_tools) StdoutLine: {'line': b"writing manifest file 'pika_custom_tools.egg-info/SOURCES.txt'\n"}
+[3.121418] (pika_custom_tools) StdoutLine: {'line': b'running build_ext\n'}
+[3.121571] (pika_custom_tools) StdoutLine: {'line': b'Creating /root/pika_ros/install_new/pika_custom_tools/lib/python3.10/site-packages/pika-custom-tools.egg-link (link to .)\n'}
+[3.121850] (pika_custom_tools) StdoutLine: {'line': b'Installing pika_custom_tools script to /root/pika_ros/install_new/pika_custom_tools/lib/pika_custom_tools\n'}
+[3.121949] (pika_custom_tools) StdoutLine: {'line': b'\n'}
+[3.122026] (pika_custom_tools) StdoutLine: {'line': b'Installed /root/pika_ros/build_new/pika_custom_tools\n'}
+[3.122083] (pika_custom_tools) StdoutLine: {'line': b'running symlink_data\n'}
+[3.133865] (pika_custom_tools) CommandEnded: {'returncode': 0}
+[3.137051] (pika_custom_tools) JobEnded: {'identifier': 'pika_custom_tools', 'rc': 0}
+[3.137335] (-) EventReactorShutdown: {}

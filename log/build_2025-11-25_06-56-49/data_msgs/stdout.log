@@ -1,0 +1,345 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)
+-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+-- Found PythonExtra: .so  
+-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /root/pika_ros/build_new/data_msgs
+[  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[  2%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[  2%] Built target ament_cmake_python_symlink_data_msgs
+running egg_info
+creating data_msgs.egg-info
+writing data_msgs.egg-info/PKG-INFO
+writing dependency_links to data_msgs.egg-info/dependency_links.txt
+writing top-level names to data_msgs.egg-info/top_level.txt
+writing manifest file 'data_msgs.egg-info/SOURCES.txt'
+reading manifest file 'data_msgs.egg-info/SOURCES.txt'
+writing manifest file 'data_msgs.egg-info/SOURCES.txt'
+[  2%] Built target ament_cmake_python_build_data_msgs_egg
+[  2%] Built target data_msgs__cpp
+[  5%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_c.dir/rosidl_generator_c/data_msgs/msg/detail/capture_status__functions.c.o[0m
+[  5%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_c.dir/rosidl_generator_c/data_msgs/msg/detail/teleop_status__functions.c.o[0m
+[  7%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_c.dir/rosidl_generator_c/data_msgs/msg/detail/gripper__functions.c.o[0m
+[  8%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_c.dir/rosidl_generator_c/data_msgs/msg/detail/arm_control_status__functions.c.o[0m
+[  9%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_c.dir/rosidl_generator_c/data_msgs/srv/detail/capture_service__functions.c.o[0m
+[ 11%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_c.dir/rosidl_generator_c/data_msgs/msg/detail/localization_status__functions.c.o[0m
+[ 14%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[ 14%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[ 15%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[ 16%] [32m[1mLinking C shared library libdata_msgs__rosidl_generator_c.so[0m
+[ 16%] Built target data_msgs__rosidl_generator_c
+[ 19%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[ 19%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[ 21%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[ 23%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/data_msgs/msg/gripper__type_support.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/data_msgs/msg/capture_status__type_support.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/data_msgs/msg/teleop_status__type_support.cpp.o[0m
+[ 26%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/data_msgs/msg/localization_status__type_support.cpp.o[0m
+[ 28%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/data_msgs/msg/arm_control_status__type_support.cpp.o[0m
+[ 29%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/data_msgs/srv/capture_service__type_support.cpp.o[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/data_msgs/msg/detail/gripper__type_support.cpp.o[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/data_msgs/msg/detail/capture_status__type_support.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/data_msgs/msg/detail/teleop_status__type_support.cpp.o[0m
+[ 35%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/data_msgs/msg/detail/localization_status__type_support.cpp.o[0m
+[ 36%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/data_msgs/srv/detail/capture_service__type_support.cpp.o[0m
+[ 38%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/data_msgs/msg/detail/arm_control_status__type_support.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/data_msgs/msg/detail/dds_fastrtps/arm_control_status__type_support.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/data_msgs/msg/detail/dds_fastrtps/gripper__type_support.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/data_msgs/msg/detail/dds_fastrtps/localization_status__type_support.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/data_msgs/msg/detail/dds_fastrtps/capture_status__type_support.cpp.o[0m
+[ 46%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/data_msgs/srv/detail/dds_fastrtps/capture_service__type_support.cpp.o[0m
+[ 46%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/data_msgs/msg/detail/dds_fastrtps/teleop_status__type_support.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/data_msgs/msg/teleop_status__type_support.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/data_msgs/msg/localization_status__type_support.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/data_msgs/msg/capture_status__type_support.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/data_msgs/msg/gripper__type_support.cpp.o[0m
+[ 53%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/data_msgs/msg/arm_control_status__type_support.cpp.o[0m
+[ 54%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/data_msgs/srv/capture_service__type_support.cpp.o[0m
+[ 56%] [32m[1mLinking CXX shared library libdata_msgs__rosidl_typesupport_cpp.so[0m
+[ 61%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/data_msgs/msg/detail/gripper__type_support_c.cpp.o[0m
+[ 61%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/data_msgs/msg/detail/teleop_status__type_support_c.cpp.o[0m
+[ 61%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/data_msgs/msg/detail/capture_status__type_support_c.cpp.o[0m
+[ 63%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/data_msgs/msg/detail/localization_status__type_support_c.cpp.o[0m
+[ 64%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/data_msgs/msg/detail/arm_control_status__type_support_c.cpp.o[0m
+[ 64%] [32mBuilding CXX object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/data_msgs/srv/detail/capture_service__type_support_c.cpp.o[0m
+[ 66%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/data_msgs/msg/detail/gripper__type_support.c.o[0m
+[ 67%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/data_msgs/msg/detail/teleop_status__type_support.c.o[0m
+[ 70%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/data_msgs/msg/detail/capture_status__type_support.c.o[0m
+[ 70%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/data_msgs/msg/detail/localization_status__type_support.c.o[0m
+[ 71%] [32m[1mLinking CXX shared library libdata_msgs__rosidl_typesupport_c.so[0m
+[ 71%] Built target data_msgs__rosidl_typesupport_cpp
+[ 73%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/data_msgs/msg/detail/arm_control_status__type_support.c.o[0m
+[ 74%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/data_msgs/srv/detail/capture_service__type_support.c.o[0m
+[ 74%] Built target data_msgs__rosidl_typesupport_c
+[ 76%] [32m[1mLinking C shared library libdata_msgs__rosidl_typesupport_introspection_c.so[0m
+[ 76%] Built target data_msgs__rosidl_typesupport_introspection_c
+[ 77%] [32m[1mLinking CXX shared library libdata_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[ 77%] Built target data_msgs__rosidl_typesupport_introspection_cpp
+[ 78%] [32m[1mLinking CXX shared library libdata_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[ 80%] [32m[1mLinking CXX shared library libdata_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[ 80%] Built target data_msgs__rosidl_typesupport_fastrtps_cpp
+[ 80%] Built target data_msgs__rosidl_typesupport_fastrtps_c
+[ 80%] Built target data_msgs
+[ 81%] [34m[1mGenerating Python code for ROS interfaces[0m
+[ 81%] Built target data_msgs__py
+[ 85%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_py.dir/rosidl_generator_py/data_msgs/msg/_teleop_status_s.c.o[0m
+[ 85%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_py.dir/rosidl_generator_py/data_msgs/msg/_gripper_s.c.o[0m
+[ 85%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_py.dir/rosidl_generator_py/data_msgs/msg/_capture_status_s.c.o[0m
+[ 87%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_py.dir/rosidl_generator_py/data_msgs/msg/_arm_control_status_s.c.o[0m
+[ 88%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_py.dir/rosidl_generator_py/data_msgs/srv/_capture_service_s.c.o[0m
+[ 90%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_generator_py.dir/rosidl_generator_py/data_msgs/msg/_localization_status_s.c.o[0m
+[ 91%] [32m[1mLinking C shared library rosidl_generator_py/data_msgs/libdata_msgs__rosidl_generator_py.so[0m
+[ 91%] Built target data_msgs__rosidl_generator_py
+[ 92%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/data_msgs/_data_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[ 94%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/data_msgs/_data_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[ 95%] [32mBuilding C object CMakeFiles/data_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/data_msgs/_data_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[ 97%] [32m[1mLinking C shared library rosidl_generator_py/data_msgs/data_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[100%] [32m[1mLinking C shared library rosidl_generator_py/data_msgs/data_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[100%] [32m[1mLinking C shared library rosidl_generator_py/data_msgs/data_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[100%] Built target data_msgs__rosidl_typesupport_introspection_c__pyext
+[100%] Built target data_msgs__rosidl_typesupport_c__pyext
+[100%] Built target data_msgs__rosidl_typesupport_fastrtps_c__pyext
+-- Install configuration: "Release"
+-- Execute custom install script
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/ament_index/resource_index/rosidl_interfaces/data_msgs
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/arm_control_status.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/capture_status.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__functions.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__struct.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__type_support.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__functions.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__struct.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__type_support.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__functions.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__struct.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__type_support.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__functions.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__struct.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__type_support.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__functions.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__struct.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__type_support.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/gripper.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/localization_status.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/rosidl_generator_c__visibility_control.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/teleop_status.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/capture_service.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__functions.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__struct.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__type_support.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/library_path.sh
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/library_path.dsv
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__rosidl_typesupport_introspection_c.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__rosidl_typesupport_introspection_c.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__rosidl_typesupport_introspection_c.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__rosidl_typesupport_introspection_c.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__rosidl_typesupport_introspection_c.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__rosidl_typesupport_introspection_c.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/arm_control_status.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/capture_status.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__builder.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__struct.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__traits.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__type_support.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__builder.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__struct.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__traits.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__type_support.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__builder.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__struct.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__traits.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__type_support.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__builder.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__struct.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__traits.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__type_support.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__builder.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__struct.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__traits.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__type_support.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/gripper.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/localization_status.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/teleop_status.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/capture_service.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__builder.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__struct.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__traits.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__type_support.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/arm_control_status__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/capture_status__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/gripper__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/localization_status__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/msg/detail/teleop_status__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/include/data_msgs/data_msgs/srv/detail/capture_service__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/pythonpath.sh
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/pythonpath.dsv
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs-0.0.0-py3.10.egg-info/top_level.txt
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/__init__.py
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/_data_msgs_s.ep.rosidl_typesupport_c.c
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/_data_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/_data_msgs_s.ep.rosidl_typesupport_introspection_c.c
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/libdata_msgs__rosidl_generator_py.so
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/__init__.py
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_arm_control_status.py
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_arm_control_status_s.c
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_capture_status.py
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_capture_status_s.c
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_gripper.py
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_gripper_s.c
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_localization_status.py
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_localization_status_s.c
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_teleop_status.py
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_teleop_status_s.c
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv/__init__.py
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv/_capture_service.py
+-- Symlinking: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv/_capture_service_s.c
+-- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+-- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+-- Up-to-date symlink: /root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/data_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/Gripper.idl
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/CaptureStatus.idl
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/TeleopStatus.idl
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/LocalizationStatus.idl
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/ArmControlStatus.idl
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/srv/CaptureService.idl
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/Gripper.msg
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/CaptureStatus.msg
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/TeleopStatus.msg
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/LocalizationStatus.msg
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/msg/ArmControlStatus.msg
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/srv/CaptureService.srv
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/srv/CaptureService_Request.msg
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/srv/CaptureService_Response.msg
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/ament_index/resource_index/package_run_dependencies/data_msgs
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/ament_index/resource_index/parent_prefix_path/data_msgs
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/ament_prefix_path.sh
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/ament_prefix_path.dsv
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/path.sh
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/environment/path.dsv
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/local_setup.bash
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/local_setup.sh
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/local_setup.zsh
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/local_setup.dsv
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/package.dsv
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/ament_index/resource_index/packages/data_msgs
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/rosidl_cmake-extras.cmake
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/ament_cmake_export_targets-extras.cmake
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgsConfig.cmake
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgsConfig-version.cmake
+-- Symlinking: /root/pika_ros/install_new/data_msgs/share/data_msgs/package.xml
+-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_generator_c.so
+-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_generator_c.so" to ""
+-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_fastrtps_c.so
+-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_introspection_c.so
+-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_introspection_c.so" to ""
+-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_c.so
+-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_c.so" to ""
+-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_fastrtps_cpp.so
+-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_introspection_cpp.so
+-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_cpp.so
+-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_typesupport_cpp.so" to ""
+Listing '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs'...
+Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/__init__.py'...
+Listing '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg'...
+Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/__init__.py'...
+Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_arm_control_status.py'...
+Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_capture_status.py'...
+Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_gripper.py'...
+Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_localization_status.py'...
+Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/msg/_teleop_status.py'...
+Listing '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv'...
+Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv/__init__.py'...
+Compiling '/root/pika_ros/install_new/data_msgs/local/lib/python3.10/dist-packages/data_msgs/srv/_capture_service.py'...
+-- Installing: /root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_generator_py.so
+-- Set runtime path of "/root/pika_ros/install_new/data_msgs/lib/libdata_msgs__rosidl_generator_py.so" to ""
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_generator_cExport.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_generator_cExport-release.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_typesupport_fastrtps_cExport-release.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_introspection_cExport.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_introspection_cExport-release.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_cExport.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_cExport-release.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_generator_cppExport.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_introspection_cppExport.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_introspection_cppExport-release.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_cppExport.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/data_msgs__rosidl_typesupport_cppExport-release.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_generator_pyExport.cmake
+-- Installing: /root/pika_ros/install_new/data_msgs/share/data_msgs/cmake/export_data_msgs__rosidl_generator_pyExport-release.cmake

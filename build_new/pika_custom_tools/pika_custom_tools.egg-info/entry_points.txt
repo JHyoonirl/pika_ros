@@ -1,0 +1,3 @@
+[console_scripts]
+pika_custom_tools = pika_custom_tools.pika_custom_tools:main
+

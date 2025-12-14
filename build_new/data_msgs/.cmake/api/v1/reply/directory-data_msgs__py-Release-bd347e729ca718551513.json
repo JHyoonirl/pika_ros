@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "data_msgs__py",
+		"source" : "/root/pika_ros/build_new/data_msgs/data_msgs__py"
+	}
+}
