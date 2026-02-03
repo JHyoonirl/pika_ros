@@ -4,8 +4,8 @@ core
 *.log
 
 # ROS 2 build artifacts
-build/
-install/
+# build/
+# install/
 log/
 
 # Python
