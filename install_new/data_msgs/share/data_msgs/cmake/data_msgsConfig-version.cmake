@@ -1,0 +1,1 @@
+/root/pika_ros/build_new/data_msgs/ament_cmake_core/data_msgsConfig-version.cmake

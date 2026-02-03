@@ -1,0 +1,6 @@
+/root/pika_ros/build_new/data_msgs/rosidl_adapter/data_msgs:msg/Gripper.idl
+/root/pika_ros/build_new/data_msgs/rosidl_adapter/data_msgs:msg/CaptureStatus.idl
+/root/pika_ros/build_new/data_msgs/rosidl_adapter/data_msgs:msg/TeleopStatus.idl
+/root/pika_ros/build_new/data_msgs/rosidl_adapter/data_msgs:msg/LocalizationStatus.idl
+/root/pika_ros/build_new/data_msgs/rosidl_adapter/data_msgs:msg/ArmControlStatus.idl
+/root/pika_ros/build_new/data_msgs/rosidl_adapter/data_msgs:srv/CaptureService.idl

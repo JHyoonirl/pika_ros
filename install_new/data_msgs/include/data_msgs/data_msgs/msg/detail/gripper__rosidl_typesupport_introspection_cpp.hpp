@@ -1,0 +1,1 @@
+/root/pika_ros/build_new/data_msgs/rosidl_typesupport_introspection_cpp/data_msgs/msg/detail/gripper__rosidl_typesupport_introspection_cpp.hpp

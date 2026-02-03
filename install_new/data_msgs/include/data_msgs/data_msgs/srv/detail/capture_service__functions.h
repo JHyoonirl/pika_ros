@@ -1,0 +1,1 @@
+/root/pika_ros/build_new/data_msgs/rosidl_generator_c/data_msgs/srv/detail/capture_service__functions.h

@@ -1,0 +1,1 @@
+/root/pika_ros/build_new/data_msgs/rosidl_generator_c/data_msgs/msg/rosidl_generator_c__visibility_control.h

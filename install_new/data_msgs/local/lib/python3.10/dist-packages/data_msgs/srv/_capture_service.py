@@ -1,0 +1,1 @@
+/root/pika_ros/build_new/data_msgs/rosidl_generator_py/data_msgs/srv/_capture_service.py

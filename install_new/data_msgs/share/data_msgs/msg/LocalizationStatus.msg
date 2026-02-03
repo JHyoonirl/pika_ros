@@ -1,0 +1,1 @@
+/root/pika_ros/src/data_msgs/msg/LocalizationStatus.msg

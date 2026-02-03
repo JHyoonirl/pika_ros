@@ -1,0 +1,4 @@
+[console_scripts]
+pika_calibration_tools = pika_custom_tools.pika_calibration_tools:main
+pika_custom_tools = pika_custom_tools.pika_custom_tools:main
+

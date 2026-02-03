@@ -1,0 +1,1 @@
+/root/pika_ros/build_new/data_msgs/rosidl_typesupport_fastrtps_cpp/data_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h

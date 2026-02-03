@@ -1,0 +1,1 @@
+/root/pika_ros/build_new/data_msgs/rosidl_cmake/srv/CaptureService_Request.msg

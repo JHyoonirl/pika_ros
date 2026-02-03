@@ -1,0 +1,1 @@
+/root/pika_ros/build_new/data_msgs/rosidl_generator_c/data_msgs/msg/detail/capture_status__struct.h

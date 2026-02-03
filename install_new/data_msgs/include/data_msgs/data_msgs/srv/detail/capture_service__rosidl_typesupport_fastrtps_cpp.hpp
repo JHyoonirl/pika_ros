@@ -1,0 +1,1 @@
+/root/pika_ros/build_new/data_msgs/rosidl_typesupport_fastrtps_cpp/data_msgs/srv/detail/capture_service__rosidl_typesupport_fastrtps_cpp.hpp

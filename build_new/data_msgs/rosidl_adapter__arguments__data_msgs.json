@@ -1,0 +1,11 @@
+{
+  "package_name": "data_msgs",
+  "non_idl_tuples": [
+    "/root/pika_ros/src/data_msgs:msg/Gripper.msg",
+    "/root/pika_ros/src/data_msgs:msg/CaptureStatus.msg",
+    "/root/pika_ros/src/data_msgs:msg/TeleopStatus.msg",
+    "/root/pika_ros/src/data_msgs:msg/LocalizationStatus.msg",
+    "/root/pika_ros/src/data_msgs:msg/ArmControlStatus.msg",
+    "/root/pika_ros/src/data_msgs:srv/CaptureService.srv"
+  ]
+}
