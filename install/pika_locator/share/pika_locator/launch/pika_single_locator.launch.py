@@ -72,5 +72,5 @@ def generate_launch_description():
         angular_limit_arg,
         rviz_config_arg,
         pika_single_locator_node,
-        rviz_node
+        # rviz_node
     ]) 

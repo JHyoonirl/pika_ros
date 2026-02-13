@@ -9,7 +9,18 @@ NC='\033[0m'
 function log_info() { echo -e "${GREEN}[INFO] $(date '+%H:%M:%S') > $1${NC}"; }
 function log_error() { echo -e "${RED}[ERROR] $(date '+%H:%M:%S') > $1${NC}"; }
 
-log_info "스크립트 시작: Run Right Gripper (Using Setup Links)"
+# =========================================================
+# PREFIX 설정 (첫 번째 인자로 받기, 없으면 빈 문자열)
+# 사용법: ./start_custom_single_gripper.bash [prefix]
+# 예: ./start_custom_single_gripper.bash pika1
+# =========================================================
+PIKA_PREFIX="${1:-}"
+
+if [ -n "$PIKA_PREFIX" ]; then
+    log_info "스크립트 시작: Run Right Gripper (Using Setup Links) with PREFIX='$PIKA_PREFIX'"
+else
+    log_info "스크립트 시작: Run Right Gripper (Using Setup Links) - No PREFIX"
+fi
 
 # =========================================================
 # 1. 사용할 장치 이름 (Setup 스크립트가 만든 이름 - Gripper용)
@@ -70,10 +81,19 @@ trap "kill 0" EXIT
 log_info "1. [Motor] Driver 실행..."
 
 # [변경됨] install_new 사용 & joint_name을 gripper_joint로 변경
-(source /root/pika_ros/install_new/setup.bash && \
- ros2 launch pika_custom_tools pika_custom_tools.launch.py \
- serial_port:=$TARGET_SERIAL_LINK \
- joint_name:=gripper_joint) &
+# PREFIX가 있을 때와 없을 때를 구분하여 실행
+if [ -n "$PIKA_PREFIX" ]; then
+    (source /root/pika_ros/install_new/setup.bash && \
+     ros2 launch pika_custom_tools pika_custom_tools.launch.py \
+     serial_port:=$TARGET_SERIAL_LINK \
+     joint_name:=gripper_joint \
+     prefix:=$PIKA_PREFIX) &
+else
+    (source /root/pika_ros/install_new/setup.bash && \
+     ros2 launch pika_custom_tools pika_custom_tools.launch.py \
+     serial_port:=$TARGET_SERIAL_LINK \
+     joint_name:=gripper_joint) &
+fi
 
 log_info "   -> 초기화 대기 (3초)..."
 sleep 3
@@ -90,12 +110,26 @@ if [ ! -f "/root/pika_ros/install/sensor_tools/share/sensor_tools/launch/$LAUNCH
     LAUNCH_FILE="open_single_sensor.launch.py"
 fi
 
-source /root/pika_ros/install/setup.bash && \
-ros2 launch sensor_tools $LAUNCH_FILE \
-    serial_port:=$TARGET_SERIAL_LINK \
-    fisheye_port:=$REAL_VIDEO_NUM \
-    camera_fps:=$camera_fps \
-    camera_width:=$camera_width \
-    camera_height:=$camera_height \
-    camera_profile:=$camera_width,$camera_height,$camera_fps \
-    joint_name:=gripper_joint
+# PREFIX가 있을 때와 없을 때를 구분하여 실행
+if [ -n "$PIKA_PREFIX" ]; then
+    source /root/pika_ros/install/setup.bash && \
+    ros2 launch sensor_tools $LAUNCH_FILE \
+        serial_port:=$TARGET_SERIAL_LINK \
+        fisheye_port:=$REAL_VIDEO_NUM \
+        camera_fps:=$camera_fps \
+        camera_width:=$camera_width \
+        camera_height:=$camera_height \
+        camera_profile:=$camera_width,$camera_height,$camera_fps \
+        joint_name:=gripper_joint \
+        prefix:=$PIKA_PREFIX
+else
+    source /root/pika_ros/install/setup.bash && \
+    ros2 launch sensor_tools $LAUNCH_FILE \
+        serial_port:=$TARGET_SERIAL_LINK \
+        fisheye_port:=$REAL_VIDEO_NUM \
+        camera_fps:=$camera_fps \
+        camera_width:=$camera_width \
+        camera_height:=$camera_height \
+        camera_profile:=$camera_width,$camera_height,$camera_fps \
+        joint_name:=gripper_joint
+fi

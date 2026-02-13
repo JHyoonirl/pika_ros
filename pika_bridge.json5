@@ -1,0 +1,11 @@
+{
+  // Zenoh 공통 설정
+  "mode": "peer",
+  "listen": { "endpoints": ["tcp/[::]:7448"] },
+  "plugins": {
+    "ros2dds": {
+      "allow": "/(pika|tf|joint_states|camera)/.*",
+      "namespace": "/pika_bridge"
+    }
+  }
+}

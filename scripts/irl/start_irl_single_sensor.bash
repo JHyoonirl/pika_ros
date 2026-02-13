@@ -9,14 +9,26 @@ NC='\033[0m'
 function log_info() { echo -e "${GREEN}[INFO] $(date '+%H:%M:%S') > $1${NC}"; }
 function log_error() { echo -e "${RED}[ERROR] $(date '+%H:%M:%S') > $1${NC}"; }
 
-log_info "스크립트 시작: Run Right Sensor (Using Setup Links)"
+# =========================================================
+# PREFIX 설정 (첫 번째 인자로 받기, 없으면 빈 문자열)
+# 사용법: ./start_custom_single_sensor.bash [prefix]
+# 예: ./start_custom_single_sensor.bash pika1
+# =========================================================
+PIKA_PREFIX="${1:-}"
+
+if [ -n "$PIKA_PREFIX" ]; then
+    log_info "스크립트 시작: Run Right Sensor (Using Setup Links) with PREFIX='$PIKA_PREFIX'"
+else
+    log_info "스크립트 시작: Run Right Sensor (Using Setup Links) - No PREFIX"
+fi
 
 # =========================================================
 # 1. 사용할 장치 이름 (Setup 스크립트가 만들어준 이름)
 # =========================================================
 TARGET_SERIAL_LINK="/dev/pika_sensor_right_serial"
 TARGET_VIDEO_LINK="/dev/pika_sensor_right_video"
-SENSOR_SN="315122270900"
+
+SENSOR_SN=$R_SENSOR_DEPTH_SN_R
 
 # 카메라 설정
 camera_fps=15
@@ -67,23 +79,49 @@ trap "kill 0" EXIT
 
 # (1) 모터 드라이버 실행
 log_info "1. [Motor] Driver 실행..."
+
+# Sensor namespace 적용
 (source /root/pika_ros/install_new/setup.bash && \
  ros2 launch pika_custom_tools pika_custom_tools.launch.py \
+ prefix:=sensor \
  serial_port:=$TARGET_SERIAL_LINK \
- joint_name:=sensor_joint) &
+ joint_name:=sensor_joint \
+ node_name:=sensor_custom_node \
+ topic_joint_state_info:=/joint_states \
+ topic_joint_state_gripper:=/joint_states_gripper \
+ topic_data_capture_status:=/data_tools_dataCapture/status \
+ topic_teleop_status:=/teleop_status \
+ topic_localization_status:=/pika_localization_status \
+ topic_arm_control_status:=/arm_control_status) &
 
 log_info "   -> 초기화 대기 (3초)..."
 sleep 3
 
 # (2) 카메라 노드 실행 (추출한 번호 사용)
 log_info "2. [Camera] Node 실행 (Index: $REAL_VIDEO_NUM)..."
-source /root/pika_ros/install/setup.bash && \
-ros2 launch sensor_tools open_single_sensor.launch.py \
-    serial_port:=$TARGET_SERIAL_LINK \
-    fisheye_port:=$REAL_VIDEO_NUM \
-    depth_camera_no:="'$SENSOR_SN'" \
-    camera_fps:=$camera_fps \
-    camera_width:=$camera_width \
-    camera_height:=$camera_height \
-    camera_profile:="${camera_width}x${camera_height}x${camera_fps}" \
-    joint_name:=sensor_joint
+
+# PREFIX가 있을 때와 없을 때를 구분하여 실행
+if [ -n "$PIKA_PREFIX" ]; then
+    source /root/pika_ros/install/setup.bash && \
+    ros2 launch sensor_tools open_single_sensor.launch.py \
+        serial_port:=$TARGET_SERIAL_LINK \
+        fisheye_port:=$REAL_VIDEO_NUM \
+        depth_camera_no:="'$SENSOR_SN'" \
+        camera_fps:=$camera_fps \
+        camera_width:=$camera_width \
+        camera_height:=$camera_height \
+        camera_profile:="${camera_width}x${camera_height}x${camera_fps}" \
+        joint_name:=sensor_joint \
+        prefix:=$PIKA_PREFIX
+else
+    source /root/pika_ros/install/setup.bash && \
+    ros2 launch sensor_tools open_single_sensor.launch.py \
+        serial_port:=$TARGET_SERIAL_LINK \
+        fisheye_port:=$REAL_VIDEO_NUM \
+        depth_camera_no:="'$SENSOR_SN'" \
+        camera_fps:=$camera_fps \
+        camera_width:=$camera_width \
+        camera_height:=$camera_height \
+        camera_profile:="${camera_width}x${camera_height}x${camera_fps}" \
+        joint_name:=sensor_joint
+fi

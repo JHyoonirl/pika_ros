@@ -15,20 +15,20 @@ echo "물리 주소를 기반으로 장치 이름표(Symlink)를 생성합니다
 # =========================================================
 
 # [Right Sensor] - (확인된 주소)
-R_SENSOR_SERIAL_ADDR="5-1.1.1.4"
-R_SENSOR_VIDEO_ADDR="5-1.1.1.1"
+R_SENSOR_SERIAL_ADDR="1-3.1.4"
+R_SENSOR_VIDEO_ADDR="1-3.1.1"
 
 # [Left Sensor] - (필요시 입력)
-L_SENSOR_SERIAL_ADDR=""
-L_SENSOR_VIDEO_ADDR=""
+L_SENSOR_SERIAL_ADDR="1-1.4.1.4"
+L_SENSOR_VIDEO_ADDR="1-1.4.1.1"
 
 # [Right Gripper]
-R_GRIPPER_SERIAL_ADDR="3-1.4.4"
-R_GRIPPER_VIDEO_ADDR="3-1.4.1"
+R_GRIPPER_SERIAL_ADDR="1-5.1.1.4"
+R_GRIPPER_VIDEO_ADDR="1-5.1.1.1"
 
 # [Left Gripper]
-L_GRIPPER_SERIAL_ADDR=""
-L_GRIPPER_VIDEO_ADDR=""
+L_GRIPPER_SERIAL_ADDR="3-1.2.1.4"
+L_GRIPPER_VIDEO_ADDR="3-1.2.1.1"
 
 # =========================================================
 # 2. 핵심 함수: 주소로 장치 찾아서 이름 붙이기
@@ -89,7 +89,7 @@ function make_link() {
 # 3. 설정 실행
 # =========================================================
 
-echo "------------------------------------------------"
+echo "------------------------------------------------" >&2
 # Right Sensor
 make_link "$R_SENSOR_SERIAL_ADDR" "tty"   "pika_sensor_right_serial"
 make_link "$R_SENSOR_VIDEO_ADDR"  "video" "pika_sensor_right_video"
@@ -106,6 +106,17 @@ make_link "$R_GRIPPER_VIDEO_ADDR"  "video" "pika_gripper_right_video"
 make_link "$L_GRIPPER_SERIAL_ADDR" "tty"   "pika_gripper_left_serial"
 make_link "$L_GRIPPER_VIDEO_ADDR"  "video" "pika_gripper_left_video"
 
-echo "------------------------------------------------"
-echo -e "${GREEN}설정 완료! 현재 생성된 링크 목록:${NC}"
-ls -l /dev/pika* 2>/dev/null
+echo "------------------------------------------------" >&2
+echo -e "${GREEN}설정 완료! 현재 생성된 링크 목록:${NC}" >&2
+ls -l /dev/pika* 2>/dev/null >&2
+
+echo "" >&2
+echo -e "${GREEN}환경변수가 출력되었습니다. 다음 방법으로 적용하세요:${NC}" >&2
+echo -e "${CYAN}  eval \$(sudo ./setup_devices.bash)${NC}" >&2
+echo "" >&2
+echo "  L_SENSOR_DEPTH_SN_R  = $L_SENSOR_DEPTH_SN_R"
+echo "  R_SENSOR_DEPTH_SN_R  = $R_SENSOR_DEPTH_SN_R"
+echo "  L_GRIPPER_DEPTH_SN_R = $L_GRIPPER_DEPTH_SN_R"
+echo "  R_GRIPPER_DEPTH_SN_R = $R_GRIPPER_DEPTH_SN_R"
+echo ""
+echo -e "${CYAN}이제 start_irl_sensor_gripper.bash를 실행할 수 있습니다.${NC}"

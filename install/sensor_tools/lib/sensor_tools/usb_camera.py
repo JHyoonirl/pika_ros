@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import rclpy
+from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
 from sensor_msgs.msg import Image, CameraInfo
 from cv_bridge import CvBridge, CvBridgeError
@@ -62,12 +63,34 @@ class RosOperator(Node):
         else:
             target_paths = [int(self.camera_port)]
         for i in target_paths:
-            self.cap = cv2.VideoCapture(int(i))
+            # self.cap = cv2.VideoCapture(int(i))
+            
+            
+            current_file_path = os.path.abspath(__file__)
+            self.get_logger().info('==========================================')
+            self.get_logger().info(f'실행 중인 파일 경로: {current_file_path}')
+            self.get_logger().info('==========================================')
+
+            # custom code
+            # 1. cv2.CAP_V4L2 백엔드를 명시하여 리눅스 커널 드라이버와 직접 통신
+            self.cap = cv2.VideoCapture(int(i), cv2.CAP_V4L2)
+            
+            # 2. MJPG 대신 YUYV(비압축) 포맷 사용 (Corrupt JPEG 에러 원천 차단)
             self.fourcc = cv2.VideoWriter_fourcc(*'MJPG')
+            # self.fourcc = cv2.VideoWriter_fourcc(*'YUYV')
+
+            # 4. 버퍼 사이즈를 1로 설정하여 리피터 지연으로 인한 '오래된 프레임' 누적 방지
+            # self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+            self.get_logger().info('camera setting complete')
+
             self.cap.set(cv2.CAP_PROP_FOURCC, self.fourcc)
-            self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, self.camera_width)
-            self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, self.camera_height)
-            self.cap.set(cv2.CAP_PROP_FPS, self.camera_hz)
+            # self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, self.camera_width)
+            # self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, self.camera_height)
+
+            self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1080)
+            self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+            # self.cap.set(cv2.CAP_PROP_FPS, self.camera_hz)
+            self.cap.set(cv2.CAP_PROP_FPS, 30)
             if self.cap.isOpened():
                 return True
             else:
@@ -77,30 +100,34 @@ class RosOperator(Node):
         return False
     
     def run(self):
-        rate = self.create_rate(self.camera_hz)
+        rate = self.create_rate(30) # hz 사용
         self.running = True
         try:
-            while self.cap.isOpened() and rclpy.ok() and self.running:
+            # [v] rclpy.ok()와 self.running을 모두 체크하여 셧다운 시 즉시 루프 탈출
+            while rclpy.ok() and self.running and self.cap.isOpened():
                 ret, frame = self.cap.read()
                 if ret:
-                    self.publish_camera_color(frame)
+                    # [v] 퍼블리시 직전 컨텍스트 유효성 한 번 더 확인
+                    if rclpy.ok():
+                        self.publish_camera_color(frame)
                 rate.sleep()
         except Exception as e:
-            self.get_logger().error(f"Camera error: {e}")
+            if rclpy.ok(): # 종료 중이 아닐 때만 에러 출력
+                self.get_logger().error(f"Camera error: {e}")
         finally:
             self.cleanup_camera()
 
     def cleanup_camera(self):
-        """清理摄像头资源"""
         if self.cap and self.cap.isOpened():
             self.cap.release()
-            self.get_logger().info("Camera released")
+            if rclpy.ok():
+                self.get_logger().info("Camera released")
     
     def stop(self):
-        """停止摄像头操作"""
         self.running = False
         if self.camera_thread and self.camera_thread.is_alive():
-            self.camera_thread.join(timeout=2.0)  # 等待线程结束
+            self.camera_thread.join(timeout=1.0)
+
 
     def publish_camera_color(self, color):
         img = self.bridge.cv2_to_imgmsg(color, "bgr8")
@@ -129,19 +156,17 @@ class RosOperator(Node):
 ros_operator_instance = None
 
 def signal_handler(signum, frame):
-    """信号处理函数"""
-    print(f"\nReceived signal {signum}, shutting down gracefully...")
+    global ros_operator_instance
     if ros_operator_instance:
-        ros_operator_instance.stop()
-    rclpy.shutdown()
+        ros_operator_instance.running = False
     sys.exit(0)
 
 def main():
     global ros_operator_instance
     
-    # 注册信号处理器
-    signal.signal(signal.SIGINT, signal_handler)   # Ctrl+C
-    signal.signal(signal.SIGTERM, signal_handler)  # kill命令
+    # 시그널 등록
+    signal.signal(signal.SIGINT, signal_handler)
+    signal.signal(signal.SIGTERM, signal_handler)
     
     rclpy.init()
     ros_operator_instance = RosOperator()
@@ -150,18 +175,28 @@ def main():
         if ros_operator_instance.init_camera():
             print("camera opened")
             ros_operator_instance.camera_thread = threading.Thread(target=ros_operator_instance.run)
-            ros_operator_instance.camera_thread.daemon = True  # 设置为守护线程
+            ros_operator_instance.camera_thread.daemon = True
             ros_operator_instance.camera_thread.start()
+            
+            # 메인 스레드에서 노드 스핀
             rclpy.spin(ros_operator_instance)
         else:
             print("camera error")
+            
+    except (KeyboardInterrupt, ExternalShutdownException):
+        pass
+    except SystemExit: # sys.exit(0) 발생 시 처리
+        pass
     except Exception as e:
         print(f"Error: {e}")
     finally:
-        # 确保资源清理
+        # [v] 모든 종료 처리는 여기서 딱 한 번 수행
         if ros_operator_instance:
             ros_operator_instance.stop()
-        rclpy.shutdown()
+            ros_operator_instance.destroy_node()
+        
+        if rclpy.ok():
+            rclpy.shutdown()
         print("Program terminated, resources cleaned up")
 
 

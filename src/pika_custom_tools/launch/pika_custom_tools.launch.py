@@ -16,7 +16,10 @@ def generate_launch_description():
         DeclareLaunchArgument('mit_mode', default_value='true'),
         DeclareLaunchArgument('ctrl_rate', default_value='50.0'),
         
-        # 2. [추가됨] 노드 이름 변경용 인자
+        # 2. [추가됨] prefix (여러 대 운영 시 사용)
+        DeclareLaunchArgument('prefix', default_value=''),
+        
+        # 3. [추가됨] 노드 이름 변경용 인자
         DeclareLaunchArgument('node_name', default_value='pika_custom_tools'),
 
         # 3. [추가됨] 리매핑(Remapping)용 인자 (기본값은 기존 설정 유지)
@@ -42,6 +45,7 @@ def generate_launch_description():
     motor_current_redundancy = LaunchConfiguration('motor_current_redundancy')
     mit_mode = LaunchConfiguration('mit_mode')
     ctrl_rate = LaunchConfiguration('ctrl_rate')
+    prefix = LaunchConfiguration('prefix')
     
     # 리매핑 변수 로드
     node_name = LaunchConfiguration('node_name')
@@ -61,7 +65,8 @@ def generate_launch_description():
         Node(
             package='pika_custom_tools',
             executable='pika_custom_tools',
-            name=node_name,  # 노드 이름도 변수로 설정
+            name=node_name,
+            namespace=prefix,
             parameters=[{'serial_port': serial_port,
                          'joint_name': joint_name,
                          'motor_current_limit': motor_current_limit,
@@ -69,18 +74,15 @@ def generate_launch_description():
                          'mit_mode': mit_mode,
                          'ctrl_rate': ctrl_rate}],
             remappings=[
-                ('/imu/data', topic_imu),
-                ('/gripper/data', topic_gripper_data),
-                ('/gripper/ctrl', topic_gripper_ctrl),
-                ('/gripper/joint_state', topic_gripper_joint_state),
-                ('/gripper/joint_state_ctrl', topic_gripper_joint_state_ctrl),
-                ('/joint_state_info', topic_joint_state_info),
-                ('/joint_state_gripper', topic_joint_state_gripper),
-                # 추가된 리매핑
-                ('/data_capture_status', topic_data_capture_status),
-                ('/teleop_status', topic_teleop_status),
-                ('/localization_status', topic_localization_status),
-                ('/arm_control_status', topic_arm_control_status),
+                # Global 토픽만 remapping (절대경로)
+                ('joint_state_info', topic_joint_state_info),
+                ('joint_state_gripper', topic_joint_state_gripper),
+                ('data_capture_status', topic_data_capture_status),
+                ('teleop_status', topic_teleop_status),
+                ('localization_status', topic_localization_status),
+                ('arm_control_status', topic_arm_control_status),
+                # Gripper control remapping (teleoperation용)
+                ('gripper/joint_state_ctrl', topic_gripper_joint_state_ctrl),
             ],
             respawn=True,
             output='screen'

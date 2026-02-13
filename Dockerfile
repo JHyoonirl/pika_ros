@@ -87,12 +87,44 @@ RUN /bin/bash -c "source /opt/ros/humble/setup.bash"
 WORKDIR /root/pika_ros/source
 RUN unzip /root/pika_ros/source/install.zip -d /root/pika_ros
 
+# ==========================================
+# 22. Zenoh Bridge 소스 빌드를 위한 필수 환경 구축
+# ==========================================
+RUN apt-get update && apt-get install -y \
+    curl \
+    gnupg \
+    clang \            
+    libclang-dev \    
+    llvm-dev \        
+    pkg-config \
+    libssl-dev \
+    && rm -rf /var/lib/apt/lists/*
+# DNS 문제를 방지하기 위해 curl로 직접 rustup 스크립트를 실행합니다.
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+# ==========================================
+# 23. zenoh-plugin-ros2dds 소스 빌드 (공식 리포지토리 기준)
+# ==========================================
+WORKDIR /root
+RUN git clone https://github.com/eclipse-zenoh/zenoh-plugin-ros2dds.git
+WORKDIR /root/zenoh-plugin-ros2dds
+
+# 리포지토리의 가이드에 따라 릴리스 모드로 빌드 (시간이 다소 소요됩니다)
+# --release 옵션으로 최적화된 바이너리를 생성합니다.
+RUN cargo build --release
+
+# 빌드된 바이너리를 시스템 경로로 복사하여 어디서든 실행 가능하게 함
+RUN cp target/release/zenoh-bridge-ros2dds /usr/local/bin/
+
+# 나머지 ROS 패키지들은 원래대로 설치
 RUN apt-get update && apt-get install -y \
     ros-humble-pcl-conversions \
     ros-humble-image-transport \
     ros-humble-rviz2 \
     ros-humble-rqt \
     ros-humble-rmw-cyclonedds-cpp \
+    ros-humble-image-transport-plugins \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install "numpy<2.0"
@@ -101,6 +133,11 @@ RUN pip3 install pyserial scipy
 RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc 
 RUN echo "source /root/pika_ros/install/setup.bash" >> /root/.bashrc 
 RUN echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> /root/.bashrc
+# 기존 경로를 /root/cyclonedds_shared.xml로 변경
+# RUN echo "export CYCLONEDDS_URI=file:///root/cyclonedds_shared.xml" >> /root/.bashrc
+
+# (참고) pika_bridge 함수 내에서도 이 경로를 참조하도록 수정되어 있다면 더 좋습니다.
+RUN echo "source /root/pika_ros/pika_env.sh" >> /root/.bashrc
 
 WORKDIR /root/pika_ros
 RUN . /opt/ros/$ROS_DISTRO/setup.sh && colcon build --packages-select pika_custom_tools

@@ -2,7 +2,7 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
-from launch.substitutions import LaunchConfiguration, Command
+from launch.substitutions import LaunchConfiguration, Command, PythonExpression
 from launch_ros.actions import Node
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -24,7 +24,9 @@ def generate_launch_description():
         DeclareLaunchArgument('motor_current_limit', default_value='1000.0'),
         DeclareLaunchArgument('motor_current_redundancy', default_value='500.0'),
         DeclareLaunchArgument('mit_mode', default_value='true'),
-        DeclareLaunchArgument('ctrl_rate', default_value='50.0')
+        DeclareLaunchArgument('ctrl_rate', default_value='50.0'),
+        # prefix 추가 (여러 대 운영 시 사용)
+        DeclareLaunchArgument('prefix', default_value=''),
     ]
 
     camera_fps = LaunchConfiguration('camera_fps')
@@ -38,10 +40,18 @@ def generate_launch_description():
     motor_current_redundancy = LaunchConfiguration('motor_current_redundancy')
     mit_mode = LaunchConfiguration('mit_mode')
     ctrl_rate = LaunchConfiguration('ctrl_rate')
+    prefix = LaunchConfiguration('prefix')
+    
+    # prefix가 있을 때 camera_namespace를 동적으로 생성
+    camera_namespace = PythonExpression([
+        "'", prefix, "/gripper' if '", prefix, "' else 'gripper'"
+    ])
 
     depth_camera_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('realsense2_camera'), 'launch', 'rs_launch.py')]),
         launch_arguments={
+                          'camera_namespace': camera_namespace,
+                          'camera_name': 'camera',
                           'rgb_camera.color_profile': camera_profile, 
                           'depth_module.color_profile': camera_profile, 
                           'depth_module.depth_profile': camera_profile,
@@ -54,14 +64,15 @@ def generate_launch_description():
             package='sensor_tools',
             executable='usb_camera.py',
             name='camera_fisheye',
+            namespace=prefix,
             parameters=[{'camera_port': fisheye_port,
                          'camera_fps': camera_fps,
                          'camera_height': camera_height,
                          'camera_width': camera_width,
                          'camera_frame_id': "camera_fisheye_link"}],
             remappings=[
-                ('/camera_rgb/color/image_raw', '/camera_fisheye/color/image_raw'),
-                ('/camera_rgb/color/camera_info', '/camera_fisheye/color/camera_info')
+                ('camera_rgb/color/image_raw', 'camera_fisheye/color/image_raw'),
+                ('camera_rgb/color/camera_info', 'camera_fisheye/color/camera_info')
             ],
             respawn=True,
             output='screen'
@@ -70,6 +81,7 @@ def generate_launch_description():
             package='sensor_tools',
             executable='serial_gripper_imu',
             name='serial_gripper_imu',
+            namespace=prefix,
             parameters=[{'serial_port': serial_port,
                          'joint_name': joint_name,
                          'motor_current_limit': motor_current_limit,
@@ -77,13 +89,13 @@ def generate_launch_description():
                          'mit_mode': mit_mode,
                          'ctrl_rate': ctrl_rate}],
             remappings=[
-                ('/imu/data', '/imu/data'),
-                ('/gripper/data', '/gripper/data'),
-                ('/gripper/ctrl', '/gripper/ctrl'),
-                ('/gripper/joint_state', '/gripper/joint_state'),
-                ('/gripper/joint_state_ctrl', '/joint_states'),
-                ('/joint_state_info', '/joint_states_single'),
-                ('/joint_state_gripper', '/joint_states_single_gripper'),
+                ('imu/data', 'imu/data'),
+                ('gripper/data', 'gripper/data'),
+                ('gripper/ctrl', 'gripper/ctrl'),
+                ('gripper/joint_state', 'gripper/joint_state'),
+                ('gripper/joint_state_ctrl', 'joint_states'),
+                ('joint_state_info', 'joint_states_single'),
+                ('joint_state_gripper', 'joint_states_single_gripper'),
             ],
             respawn=True,
             output='screen'

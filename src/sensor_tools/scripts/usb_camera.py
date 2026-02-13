@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import rclpy
+from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
 from sensor_msgs.msg import Image, CameraInfo
 from cv_bridge import CvBridge, CvBridgeError
@@ -80,21 +81,26 @@ class RosOperator(Node):
         rate = self.create_rate(self.camera_hz)
         self.running = True
         try:
-            while self.cap.isOpened() and rclpy.ok() and self.running:
+            # rclpy.ok()를 체크하여 셧다운 시 루프 즉시 탈출
+            while rclpy.ok() and self.running and self.cap.isOpened():
                 ret, frame = self.cap.read()
                 if ret:
-                    self.publish_camera_color(frame)
+                    # 컨텍스트 유효성 체크 후 퍼블리시
+                    if rclpy.ok():
+                        self.publish_camera_color(frame)
                 rate.sleep()
         except Exception as e:
-            self.get_logger().error(f"Camera error: {e}")
+            if rclpy.ok(): # 셧다운 중 발생하는 에러는 무시
+                self.get_logger().error(f"Camera error: {e}")
         finally:
             self.cleanup_camera()
 
     def cleanup_camera(self):
-        """清理摄像头资源"""
         if self.cap and self.cap.isOpened():
             self.cap.release()
-            self.get_logger().info("Camera released")
+            # 노드가 살아있을 때만 로깅
+            if rclpy.ok():
+                self.get_logger().info("Camera released")
     
     def stop(self):
         """停止摄像头操作"""
@@ -129,19 +135,18 @@ class RosOperator(Node):
 ros_operator_instance = None
 
 def signal_handler(signum, frame):
-    """信号处理函数"""
-    print(f"\nReceived signal {signum}, shutting down gracefully...")
+    """신호가 오면 플래그만 변경하여 안전하게 종료 유도"""
+    global ros_operator_instance
     if ros_operator_instance:
-        ros_operator_instance.stop()
-    rclpy.shutdown()
-    sys.exit(0)
+        ros_operator_instance.running = False
+    # rclpy.shutdown()을 여기서 하지 않습니다. 
+    # rclpy.spin()이 KeyboardInterrupt 등으로 깨어나게 됩니다.
 
 def main():
     global ros_operator_instance
     
-    # 注册信号处理器
-    signal.signal(signal.SIGINT, signal_handler)   # Ctrl+C
-    signal.signal(signal.SIGTERM, signal_handler)  # kill命令
+    signal.signal(signal.SIGINT, signal_handler)
+    signal.signal(signal.SIGTERM, signal_handler)
     
     rclpy.init()
     ros_operator_instance = RosOperator()
@@ -150,19 +155,25 @@ def main():
         if ros_operator_instance.init_camera():
             print("camera opened")
             ros_operator_instance.camera_thread = threading.Thread(target=ros_operator_instance.run)
-            ros_operator_instance.camera_thread.daemon = True  # 设置为守护线程
+            # daemon=True는 유지하되, stop()으로 명시적 join 권장
+            ros_operator_instance.camera_thread.daemon = True 
             ros_operator_instance.camera_thread.start()
+            
             rclpy.spin(ros_operator_instance)
         else:
             print("camera error")
+    except (KeyboardInterrupt, ExternalShutdownException):
+        pass
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Main Error: {e}")
     finally:
-        # 确保资源清理
+        # 종료 처리는 오직 여기서 딱 한 번만!
         if ros_operator_instance:
             ros_operator_instance.stop()
-        rclpy.shutdown()
-        print("Program terminated, resources cleaned up")
+        
+        if rclpy.ok():
+            rclpy.shutdown()
+        print("Program terminated safely")
 
 
 if __name__ == '__main__':

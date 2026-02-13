@@ -51,7 +51,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('pika_locator'), 'launch', 'pika_single_locator.launch.py')])
     )
 
-    l_depth_camera_launch = IncludeLaunchDescription(
+    sensor_depth_camera_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('realsense2_camera'), 'launch', 'rs_launch.py')]),
         launch_arguments={'serial_no': sensor_depth_camera_no,
                           'camera_namespace': "sensor",
@@ -61,7 +61,7 @@ def generate_launch_description():
                           'depth_module.depth_profile': camera_profile,
                           'depth_module.infra_profile': camera_profile}.items()
     )
-    r_depth_camera_launch = IncludeLaunchDescription(
+    gripper_depth_camera_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('realsense2_camera'), 'launch', 'rs_launch.py')]),
         launch_arguments={'serial_no': gripper_depth_camera_no,
                           'camera_namespace': "gripper",
@@ -74,8 +74,8 @@ def generate_launch_description():
 
     return LaunchDescription(declared_arguments+[
         locator_launch,
-        l_depth_camera_launch,
-        r_depth_camera_launch,
+        sensor_depth_camera_launch,
+        gripper_depth_camera_launch,
         Node(
             package='sensor_tools',
             executable='usb_camera.py',

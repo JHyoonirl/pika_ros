@@ -164,24 +164,24 @@ class RosOperator(Node):
             self.get_logger().error("Failed to initialize serial port. Exiting...")
             # Node shutdown logic handled in main
 
-        # Publishers
-        self.pub_gripper = self.create_publisher(Gripper, "/gripper/data", 1)
-        self.pub_imu = self.create_publisher(Imu, "/imu/data", 1)
-        self.pub_gripper_joint_state = self.create_publisher(JointState, "/gripper/joint_state", 1)
-        self.pub_arm_joint_state_with_gripper = self.create_publisher(JointState, "/joint_state_gripper", 1)
+        # Publishers (상대경로 사용 - namespace가 자동 적용됨)
+        self.pub_gripper = self.create_publisher(Gripper, "gripper/data", 1)
+        self.pub_imu = self.create_publisher(Imu, "imu/data", 1)
+        self.pub_gripper_joint_state = self.create_publisher(JointState, "gripper/joint_state", 1)
+        self.pub_arm_joint_state_with_gripper = self.create_publisher(JointState, "joint_state_gripper", 1)
 
-        # Subscribers
+        # Subscribers (상대경로 사용 - namespace가 자동 적용됨)
         self.sub_gripper = self.create_subscription(Gripper, "gripper/ctrl", self.gripper_ctrl_handler, 1)
-        self.sub_joint_state_ctrl = self.create_subscription(JointState, "/gripper/joint_state_ctrl", self.joint_state_ctrl_handler, 1)
-        self.sub_joint_state_info = self.create_subscription(JointState, "/joint_state_info", self.joint_state_info_handler, 1)
-        self.sub_data_capture_status = self.create_subscription(CaptureStatus, "/data_capture_status", self.data_capture_status_handler, 1)
-        self.sub_teleop_status = self.create_subscription(TeleopStatus, "/teleop_status", self.teleop_status_handler, 1)
-        self.sub_localization_status = self.create_subscription(LocalizationStatus, "/localization_status", self.localization_status_handler, 1)
-        self.sub_arm_control_status = self.create_subscription(ArmControlStatus, "/arm_control_status", self.arm_control_status_handler, 1)
+        self.sub_joint_state_ctrl = self.create_subscription(JointState, "gripper/joint_state_ctrl", self.joint_state_ctrl_handler, 1)
+        self.sub_joint_state_info = self.create_subscription(JointState, "joint_state_info", self.joint_state_info_handler, 1)
+        self.sub_data_capture_status = self.create_subscription(CaptureStatus, "data_capture_status", self.data_capture_status_handler, 1)
+        self.sub_teleop_status = self.create_subscription(TeleopStatus, "teleop_status", self.teleop_status_handler, 1)
+        self.sub_localization_status = self.create_subscription(LocalizationStatus, "localization_status", self.localization_status_handler, 1)
+        self.sub_arm_control_status = self.create_subscription(ArmControlStatus, "arm_control_status", self.arm_control_status_handler, 1)
 
-        # Clients
-        self.client_capture = self.create_client(CaptureService, "/data_tools_dataCapture/capture_service")
-        self.client_teleop = self.create_client(Trigger, "/teleop_trigger")
+        # Clients (상대경로 사용 - namespace가 자동 적용됨)
+        self.client_capture = self.create_client(CaptureService, "data_tools_dataCapture/capture_service")
+        self.client_teleop = self.create_client(Trigger, "teleop_trigger")
 
         # Threads
         self.running = True
@@ -422,8 +422,8 @@ class RosOperator(Node):
     # --- Threads ---
 
     def status_sending_thread(self):
-        rate1 = 50.0 # Hz
-        rate2 = 100.0 # Hz
+        rate1 = 10.0 # Hz (LED - 변경 시에만 전송하므로 낮춰도 충분)
+        rate2 = 50.0 # Hz (Vibrate 체크)
         interval_1 = 1.0/rate1
         interval_2 = 1.0/rate2
         
@@ -450,7 +450,7 @@ class RosOperator(Node):
                     self.send_serial(cmd)
                 next_run_2 += interval_2
 
-            # Task 1: Color Control (Slower loop)
+            # Task 1: Color Control (변경 시에만 전송)
             if now >= next_run_1:
                 with self.color_status_mtx:
                     # Blue Reset Logic
@@ -469,10 +469,9 @@ class RosOperator(Node):
                     if now_color != last_color_status:
                         last_color_status_time = time.time()
                         last_color_status = now_color
-                    
-                    # Note: Big Endian used here per C++ logic
-                    cmd = self.create_binary_command(SendFlag.LIGHT_CTRL, [int(now_color)], big_endian=True)
-                    self.send_serial(cmd)
+                        # 색상이 변경되었을 때만 전송
+                        cmd = self.create_binary_command(SendFlag.LIGHT_CTRL, [int(now_color)], big_endian=True)
+                        self.send_serial(cmd)
                 next_run_1 += interval_1
             
             time.sleep(0.001) # Small sleep to prevent CPU hogging
