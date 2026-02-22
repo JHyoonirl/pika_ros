@@ -1,0 +1,8 @@
+{
+  "package_name": "piper_msgs",
+  "non_idl_tuples": [
+    "/root/pika_ros/src/PikaAnyArm/piper/piper_ros/src/piper_msgs:msg/PiperStatusMsg.msg",
+    "/root/pika_ros/src/PikaAnyArm/piper/piper_ros/src/piper_msgs:msg/PosCmd.msg",
+    "/root/pika_ros/src/PikaAnyArm/piper/piper_ros/src/piper_msgs:srv/Enable.srv"
+  ]
+}

@@ -1,154 +1,96 @@
 # 1. ROS 2 Humble 베이스 이미지 사용
 FROM ros:humble-ros-base
 
-# apt-get을 non-interactive 모드로 설정하여 빌드 중 묻는 창이 뜨지 않도록 함
+RUN sed -i 's/archive.ubuntu.com/kr.archive.ubuntu.com/g' /etc/apt/sources.list
+
+# apt-get을 non-interactive 모드로 설정
 ENV DEBIAN_FRONTEND=noninteractive
 
-# 2. 기본 툴 및 pika_ros apt 의존성 설치
-RUN apt-get update && apt-get install -y \
-    software-properties-common \
-    libjsoncpp-dev \
-    libpcap-dev \
-    python3-pcl \
-    build-essential \
-    zlib1g-dev \
-    libx11-dev \
-    libusb-1.0-0-dev \
-    freeglut3-dev \
-    liblapacke-dev \
-    libopenblas-dev \
-    libatlas-base-dev \
-    cmake \
-    git \
-    libssl-dev \
-    pkg-config \
-    libgtk-3-dev \
-    libglfw3-dev \
-    libgl1-mesa-dev \
-    libglu1-mesa-dev \
-    g++ \
-    python3-pip \
-    libopenvr-dev \
-    ros-humble-diagnostic-updater \
-    ros-humble-cv-bridge \
-    ros-humble-pcl-conversions \
-    cutecom \
-    unzip \
+# 2. 시스템 기본 의존성 설치 (Pika + libsurvive 공통 패키지 통합)
+RUN apt-get update && apt-get install -y --fix-missing\
+    software-properties-common libjsoncpp-dev libpcap-dev python3-pcl \
+    build-essential zlib1g-dev libx11-dev libusb-1.0-0-dev freeglut3-dev \
+    liblapacke-dev libopenblas-dev libatlas-base-dev cmake git libssl-dev \
+    pkg-config libgtk-3-dev libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev \
+    g++ python3-pip libopenvr-dev ros-humble-diagnostic-updater \
+    ros-humble-cv-bridge ros-humble-pcl-conversions cutecom unzip \
+    libgif-dev xorg-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # 3. GCC-13 및 libcurl-dev 설치 (PPA 추가)
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test -y \
     && apt-get update \
-    && apt-get install -y \
-        gcc-13 \
-        g++-13 \
-        libstdc++6 \
-        libcurl4-openssl-dev \
+    && apt-get install -y gcc-13 g++-13 libstdc++6 libcurl4-openssl-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# 4. pip 의존성 설치
-RUN pip3 install opencv-python
-
-# 5. pika_ros 프로젝트 클론 및 설정
-# 작업 디렉터리를 /root로 설정
+# 4. pika_ros 프로젝트 클론 및 설정
 WORKDIR /root
-
 RUN git clone https://github.com/agilexrobotics/pika_ros.git
 WORKDIR /root/pika_ros
 RUN git checkout ros2
 RUN git submodule update --init --recursive
 
-# 6. librealsense2 및 curl 소스 빌드 (사용자 지침 기반)
-# /root 에 압축 해제
+# 5. librealsense2 및 curl 소스 빌드
 WORKDIR /root
 RUN unzip /root/pika_ros/source/librealsense-2.55.1.zip -d /root
 RUN unzip /root/pika_ros/source/curl-7.75.0.zip -d /root
 
-# 7. [중요] 사용자가 제공한 이미지의 패치 작업 수행
-# pika_ros 개발자가 의도한 /home/agilex/... 경로를 우리가 실제로 압축 해제한 /root/curl... 경로로 변경
+# 경로 패치
 RUN sed -i 's|/home/agilex/pika_ros/source/curl-7.75.0|/root/curl-7.75.0|g' /root/librealsense-2.55.1/CMake/external_libcurl.cmake
 
-# 8. librealsense2 소스 빌드 및 설치
+# librealsense2 빌드
 WORKDIR /root/librealsense-2.55.1
 RUN mkdir -p build && cd build && \
-    cmake .. \
-    -DFORCE_RSUSB_BACKEND=true \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DBUILD_EXAMPLES=false \
-    -DBUILD_GRAPHICAL_EXAMPLES=false \
+    cmake .. -DFORCE_RSUSB_BACKEND=true -DCMAKE_BUILD_TYPE=Release -DBUILD_EXAMPLES=false -DBUILD_GRAPHICAL_EXAMPLES=false \
     && make -j$(nproc) install
 
-# 9. pika_ros 워크스페이스 빌드
+# 6. ROS 2 추가 패키지 설치 및 pika_ros 기본 세팅
 WORKDIR /root/pika_ros
-RUN apt-get update && apt-get install -y ros-humble-image-transport && rm -rf /var/lib/apt/lists/*
-# ROS 2 환경을 소싱(source)한 후 colcon build 실행
-RUN /bin/bash -c "source /opt/ros/humble/setup.bash"
-
-WORKDIR /root/pika_ros/source
-RUN unzip /root/pika_ros/source/install.zip -d /root/pika_ros
-
-# ==========================================
-# 22. Zenoh Bridge 소스 빌드를 위한 필수 환경 구축
-# ==========================================
 RUN apt-get update && apt-get install -y \
-    curl \
-    gnupg \
-    clang \            
-    libclang-dev \    
-    llvm-dev \        
-    pkg-config \
-    libssl-dev \
-    && rm -rf /var/lib/apt/lists/*
-# DNS 문제를 방지하기 위해 curl로 직접 rustup 스크립트를 실행합니다.
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-ENV PATH="/root/.cargo/bin:${PATH}"
-
-# ==========================================
-# 23. zenoh-plugin-ros2dds 소스 빌드 (공식 리포지토리 기준)
-# ==========================================
-WORKDIR /root
-RUN git clone https://github.com/eclipse-zenoh/zenoh-plugin-ros2dds.git
-WORKDIR /root/zenoh-plugin-ros2dds
-
-# 리포지토리의 가이드에 따라 릴리스 모드로 빌드 (시간이 다소 소요됩니다)
-# --release 옵션으로 최적화된 바이너리를 생성합니다.
-RUN cargo build --release
-
-# 빌드된 바이너리를 시스템 경로로 복사하여 어디서든 실행 가능하게 함
-RUN cp target/release/zenoh-bridge-ros2dds /usr/local/bin/
-
-# 나머지 ROS 패키지들은 원래대로 설치
-RUN apt-get update && apt-get install -y \
-    ros-humble-pcl-conversions \
     ros-humble-image-transport \
+    ros-humble-pcl-conversions \
     ros-humble-rviz2 \
     ros-humble-rqt \
     ros-humble-rmw-cyclonedds-cpp \
     ros-humble-image-transport-plugins \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install "numpy<2.0"
-RUN pip3 install pyserial scipy
+WORKDIR /root/pika_ros/source
+RUN unzip /root/pika_ros/source/install.zip -d /root/pika_ros
 
+# 7. Python 의존성 설치 (Vive Tracker용 pynput 추가)
+RUN pip3 install opencv-python "numpy<2.0" pyserial scipy pynput
+
+# ==========================================
+# 8. libsurvive 빌드 및 파이썬 바인딩(pysurvive) 설치
+# ==========================================
+WORKDIR /root
+RUN git clone https://github.com/cntools/libsurvive.git
+WORKDIR /root/libsurvive
+RUN make -j$(nproc)
+RUN make install
+
+WORKDIR /root/libsurvive
+# 1. 빌드 도구 설치
+RUN pip3 install wheel setuptools
+
+# 2. wxPython 공식 리눅스 저장소에서 우분투 22.04용 빌드본을 강제로 낚아채서 즉시 설치합니다.
+RUN pip3 install wxPython -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-22.04
+RUN pip3 install .
+RUN ldconfig
+
+# 9. 환경 변수 세팅 및 패키지 빌드
 RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc 
 RUN echo "source /root/pika_ros/install/setup.bash" >> /root/.bashrc 
 RUN echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> /root/.bashrc
-# 기존 경로를 /root/cyclonedds_shared.xml로 변경
-# RUN echo "export CYCLONEDDS_URI=file:///root/cyclonedds_shared.xml" >> /root/.bashrc
-
-# (참고) pika_bridge 함수 내에서도 이 경로를 참조하도록 수정되어 있다면 더 좋습니다.
-RUN echo "source /root/pika_ros/pika_env.sh" >> /root/.bashrc
+# RUN echo "source /root/pika_ros/pika_env.sh" >> /root/.bashrc
+RUN echo "export pika_R_code=LHR-FBF3A347" >> /root/.bashrc
 
 WORKDIR /root/pika_ros
-RUN . /opt/ros/$ROS_DISTRO/setup.sh && colcon build --packages-select pika_custom_tools
+# ROS 2 소싱 후 pika_custom_tools 빌드
+RUN /bin/bash -c "source /opt/ros/humble/setup.bash && colcon build --packages-select pika_custom_tools"
 
 RUN mkdir -p /root/.config/libsurvive
-# && colcon build --packages-select data_msgs && source /root/pika_ros/install/setup.bash && colcon build"
-
-# 컨테이너 실행 시 기본 경로 설정
-WORKDIR /root/pika_ros
-
-RUN echo "export pika_R_code=LHR-FBF3A347" >> /root/.bashrc
 
 # 컨테이너 실행 시 bash 셸 실행
 CMD ["/bin/bash"]

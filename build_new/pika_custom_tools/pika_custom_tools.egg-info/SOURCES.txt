@@ -5,8 +5,9 @@ launch/pika_custom_tools.launch.py
 pika_custom_tools/__init__.py
 pika_custom_tools/pika_calibration_tools.py
 pika_custom_tools/pika_calibration_tools_multi_teleop.py
-pika_custom_tools/pika_calibration_tools_teleop.py
+pika_custom_tools/pika_calibration_tools_single_teleop.py
 pika_custom_tools/pika_custom_tools.py
+pika_custom_tools/pika_pose_tools.py
 pika_custom_tools.egg-info/PKG-INFO
 pika_custom_tools.egg-info/SOURCES.txt
 pika_custom_tools.egg-info/dependency_links.txt

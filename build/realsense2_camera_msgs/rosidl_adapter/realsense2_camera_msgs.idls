@@ -1,0 +1,5 @@
+/root/pika_ros/build/realsense2_camera_msgs/rosidl_adapter/realsense2_camera_msgs:msg/IMUInfo.idl
+/root/pika_ros/build/realsense2_camera_msgs/rosidl_adapter/realsense2_camera_msgs:msg/Extrinsics.idl
+/root/pika_ros/build/realsense2_camera_msgs/rosidl_adapter/realsense2_camera_msgs:msg/Metadata.idl
+/root/pika_ros/build/realsense2_camera_msgs/rosidl_adapter/realsense2_camera_msgs:msg/RGBD.idl
+/root/pika_ros/build/realsense2_camera_msgs/rosidl_adapter/realsense2_camera_msgs:srv/DeviceInfo.idl

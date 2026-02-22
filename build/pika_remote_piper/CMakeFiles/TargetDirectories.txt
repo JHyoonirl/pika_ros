@@ -1,0 +1,9 @@
+/root/pika_ros/build/pika_remote_piper/CMakeFiles/uninstall.dir
+/root/pika_ros/build/pika_remote_piper/CMakeFiles/pika_remote_piper_uninstall.dir
+/root/pika_ros/build/pika_remote_piper/CMakeFiles/test.dir
+/root/pika_ros/build/pika_remote_piper/CMakeFiles/edit_cache.dir
+/root/pika_ros/build/pika_remote_piper/CMakeFiles/rebuild_cache.dir
+/root/pika_ros/build/pika_remote_piper/CMakeFiles/list_install_components.dir
+/root/pika_ros/build/pika_remote_piper/CMakeFiles/install.dir
+/root/pika_ros/build/pika_remote_piper/CMakeFiles/install/local.dir
+/root/pika_ros/build/pika_remote_piper/CMakeFiles/install/strip.dir

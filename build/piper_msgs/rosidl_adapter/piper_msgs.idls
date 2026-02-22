@@ -1,0 +1,3 @@
+/root/pika_ros/build/piper_msgs/rosidl_adapter/piper_msgs:msg/PiperStatusMsg.idl
+/root/pika_ros/build/piper_msgs/rosidl_adapter/piper_msgs:msg/PosCmd.idl
+/root/pika_ros/build/piper_msgs/rosidl_adapter/piper_msgs:srv/Enable.idl

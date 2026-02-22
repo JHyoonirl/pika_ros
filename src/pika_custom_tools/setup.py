@@ -30,8 +30,9 @@ setup(
         'console_scripts': [
             'pika_custom_tools = pika_custom_tools.pika_custom_tools:main',
             'pika_calibration_tools = pika_custom_tools.pika_calibration_tools:main',
-            'pika_calibration_tools_teleop = pika_custom_tools.pika_calibration_tools_teleop:main',
-            'pika_calibration_tools_multi_teleop = pika_custom_tools.pika_calibration_tools_multi_teleop:main'
+            'pika_calibration_tools_single_teleop = pika_custom_tools.pika_calibration_tools_single_teleop:main',
+            'pika_calibration_tools_multi_teleop = pika_custom_tools.pika_calibration_tools_multi_teleop:main',
+            'pika_pose_tools = pika_custom_tools.pika_pose_tools:main',
         ],
     },
 )
