@@ -62,18 +62,42 @@ class RosOperator(Node):
                 target_paths.append(target_path - 1)
         else:
             target_paths = [int(self.camera_port)]
+
+        import subprocess # 추가
+
         for i in target_paths:
-            self.cap = cv2.VideoCapture(int(i))
+            device_path = f"/dev/video{i}"
+            
+            # 1. OpenCV가 접근하기 전에 v4l2-ctl로 하드웨어 칩셋에 해상도/포맷 강제 주입
+            try:
+                subprocess.run(['v4l2-ctl', '-d', device_path, 
+                                f'--set-fmt-video=width={self.camera_width},height={self.camera_height},pixelformat=MJPG'], 
+                               check=False)
+                subprocess.run(['v4l2-ctl', '-d', device_path, 
+                                f'--set-parm={self.camera_hz}'], 
+                               check=False)
+                self.get_logger().info(f"[v4l2-ctl] {device_path} 하드웨어 강제 세팅 완료")
+            except Exception as e:
+                self.get_logger().warning(f"v4l2-ctl 명령 실패 (무시됨): {e}")
+
+            # 2. V4L2 드라이버를 명시하여 OpenCV 실행
+            self.cap = cv2.VideoCapture(int(i), cv2.CAP_V4L2)
             self.fourcc = cv2.VideoWriter_fourcc(*'MJPG')
             self.cap.set(cv2.CAP_PROP_FOURCC, self.fourcc)
             self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, self.camera_width)
             self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, self.camera_height)
             self.cap.set(cv2.CAP_PROP_FPS, self.camera_hz)
+            
+            # 3. 실제 적용된 해상도 터미널에 출력하여 확인
+            actual_w = self.cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+            actual_h = self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+            self.get_logger().info(f"✅ 최종 적용된 카메라 해상도: {actual_w} x {actual_h}")
+
             if self.cap.isOpened():
                 return True
             else:
                 if self.cap:
-                    self.cap.release()  # 释放失败的摄像头
+                    self.cap.release()
                 continue
         return False
     

@@ -62,41 +62,26 @@ class RosOperator(Node):
                 target_paths.append(target_path - 1)
         else:
             target_paths = [int(self.camera_port)]
-        for i in target_paths:
-            # self.cap = cv2.VideoCapture(int(i))
-            
-            
-            current_file_path = os.path.abspath(__file__)
-            self.get_logger().info('==========================================')
-            self.get_logger().info(f'실행 중인 파일 경로: {current_file_path}')
-            self.get_logger().info('==========================================')
 
-            # custom code
-            # 1. cv2.CAP_V4L2 백엔드를 명시하여 리눅스 커널 드라이버와 직접 통신
+        for i in target_paths:
+            # 1. V4L2 드라이버 명시적으로 강제 사용
             self.cap = cv2.VideoCapture(int(i), cv2.CAP_V4L2)
             
-            # 2. MJPG 대신 YUYV(비압축) 포맷 사용 (Corrupt JPEG 에러 원천 차단)
-            self.fourcc = cv2.VideoWriter_fourcc(*'MJPG')
-            # self.fourcc = cv2.VideoWriter_fourcc(*'YUYV')
-
-            # 4. 버퍼 사이즈를 1로 설정하여 리피터 지연으로 인한 '오래된 프레임' 누적 방지
-            # self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
-            self.get_logger().info('camera setting complete')
-
-            self.cap.set(cv2.CAP_PROP_FOURCC, self.fourcc)
-            # self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, self.camera_width)
-            # self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, self.camera_height)
-
-            self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1080)
-            self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
-            # self.cap.set(cv2.CAP_PROP_FPS, self.camera_hz)
-            self.cap.set(cv2.CAP_PROP_FPS, 30)
-            if self.cap.isOpened():
-                return True
-            else:
-                if self.cap:
-                    self.cap.release()  # 释放失败的摄像头
+            if not self.cap.isOpened():
                 continue
+
+            # 2. 파라미터 세팅
+            self.fourcc = cv2.VideoWriter_fourcc(*'MJPG')
+            self.cap.set(cv2.CAP_PROP_FOURCC, self.fourcc)
+            self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, self.camera_width)
+            self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, self.camera_height)
+            self.cap.set(cv2.CAP_PROP_FPS, self.camera_hz)
+
+            # 3. 💡 [핵심] 해상도 고정을 위한 Dummy Read (버그 방지용)
+            self.cap.read()
+
+            return True
+
         return False
     
     def run(self):

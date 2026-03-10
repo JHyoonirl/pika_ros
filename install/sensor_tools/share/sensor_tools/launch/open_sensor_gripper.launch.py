@@ -1,7 +1,7 @@
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
+from launch.actions import DeclareLaunchArgument, TimerAction
 from launch.substitutions import LaunchConfiguration, Command
 from launch_ros.actions import Node
 from launch.actions import IncludeLaunchDescription
@@ -23,6 +23,7 @@ def generate_launch_description():
         DeclareLaunchArgument('gripper_serial_port', default_value='/dev/ttyUSB1'),
         DeclareLaunchArgument('sensor_depth_camera_no', default_value='315122270900'),
         DeclareLaunchArgument('gripper_depth_camera_no', default_value='315122270807'),
+        DeclareLaunchArgument('trolley_depth_camera_no', default_value='335522070148'),
         DeclareLaunchArgument('sensor_joint_name', default_value='sensor_gripper_center_joint'),
         DeclareLaunchArgument('gripper_joint_name', default_value='gripper_gripper_center_joint'),
         DeclareLaunchArgument('motor_current_limit', default_value='1000.0'),
@@ -40,6 +41,7 @@ def generate_launch_description():
     gripper_serial_port = LaunchConfiguration('gripper_serial_port')
     sensor_depth_camera_no = LaunchConfiguration('sensor_depth_camera_no')
     gripper_depth_camera_no = LaunchConfiguration('gripper_depth_camera_no')
+    trolley_depth_camera_no = LaunchConfiguration('trolley_depth_camera_no')
     sensor_joint_name = LaunchConfiguration('sensor_joint_name')
     gripper_joint_name = LaunchConfiguration('gripper_joint_name')
     motor_current_limit = LaunchConfiguration('motor_current_limit')
@@ -53,29 +55,49 @@ def generate_launch_description():
 
     l_depth_camera_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('realsense2_camera'), 'launch', 'rs_launch.py')]),
-        launch_arguments={'serial_no': sensor_depth_camera_no,
-                          'camera_namespace': "sensor",
-                          'camera_name': "camera",
-                          'rgb_camera.color_profile': camera_profile, 
-                          'depth_module.color_profile': camera_profile, 
-                          'depth_module.depth_profile': camera_profile,
-                          'depth_module.infra_profile': camera_profile}.items()
+        launch_arguments={
+                        'serial_no': sensor_depth_camera_no,
+                        'camera_namespace': "sensor",
+                        'camera_name': "camera",
+                        'rgb_camera.color_profile': camera_profile, 
+                        'depth_module.color_profile': camera_profile, 
+                        'depth_module.depth_profile': camera_profile,
+                        'depth_module.infra_profile': camera_profile}.items()
     )
-    r_depth_camera_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('realsense2_camera'), 'launch', 'rs_launch.py')]),
-        launch_arguments={'serial_no': gripper_depth_camera_no,
-                          'camera_namespace': "gripper",
-                          'camera_name': "camera",
-                          'rgb_camera.color_profile': camera_profile, 
-                          'depth_module.color_profile': camera_profile, 
-                          'depth_module.depth_profile': camera_profile,
-                          'depth_module.infra_profile': camera_profile}.items()
+    r_depth_camera_launch = TimerAction(
+                period=2.0,
+                actions=[IncludeLaunchDescription(
+                    PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('realsense2_camera'), 'launch', 'rs_launch.py')]),
+                    launch_arguments={
+                        'serial_no': gripper_depth_camera_no,
+                        'camera_namespace': "gripper",
+                        'camera_name': "camera",
+                        'rgb_camera.color_profile': camera_profile, 
+                        'depth_module.color_profile': camera_profile, 
+                        'depth_module.depth_profile': camera_profile,
+                        'depth_module.infra_profile': camera_profile}.items()
+                )]
+    )
+    trolley_depth_camera_launch = TimerAction(
+                period=4.0,
+                actions=[IncludeLaunchDescription(
+                    PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('realsense2_camera'), 'launch', 'rs_launch.py')]),
+                    launch_arguments={
+                        'serial_no': trolley_depth_camera_no,
+                        'camera_namespace': "trolley",
+                        'camera_name': "camera",
+                        'rgb_camera.color_profile': camera_profile, 
+                        'depth_module.color_profile': camera_profile, 
+                        'depth_module.depth_profile': camera_profile,
+                        'depth_module.infra_profile': camera_profile}.items()
+        )]
     )
 
     return LaunchDescription(declared_arguments+[
         locator_launch,
         l_depth_camera_launch,
         r_depth_camera_launch,
+        trolley_depth_camera_launch,
         Node(
             package='sensor_tools',
             executable='usb_camera.py',

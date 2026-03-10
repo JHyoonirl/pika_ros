@@ -61,19 +61,58 @@ class RosOperator(Node):
                 target_paths.append(target_path - 1)
         else:
             target_paths = [int(self.camera_port)]
+
+        # [디버그 1] Launch 파일이나 터미널에서 파라미터가 제대로 들어왔는지 확인
+        self.get_logger().warning(f"==================================================")
+        self.get_logger().warning(f"[디버그] 입력받은 목표 해상도: {self.camera_width} x {self.camera_height} @ {self.camera_hz}fps")
+        self.get_logger().warning(f"==================================================")
+
         for i in target_paths:
-            self.cap = cv2.VideoCapture(int(i))
+            self.get_logger().info(f"/dev/video{i} 포트 열기 시도 중...")
+            
+            # V4L2 드라이버 명시
+            self.cap = cv2.VideoCapture(int(i), cv2.CAP_V4L2)
+            
+            if not self.cap.isOpened():
+                self.get_logger().error(f"/dev/video{i} 열기 실패")
+                continue
+
+            # [디버그 2] 현재 사용 중인 OpenCV 백엔드 확인
+            self.get_logger().info(f"[디버그] 활성화된 백엔드: {self.cap.getBackendName()}")
+
+            # 1. 코덱 설정 및 확인
             self.fourcc = cv2.VideoWriter_fourcc(*'MJPG')
             self.cap.set(cv2.CAP_PROP_FOURCC, self.fourcc)
-            self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, self.camera_width)
-            self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, self.camera_height)
-            self.cap.set(cv2.CAP_PROP_FPS, self.camera_hz)
-            if self.cap.isOpened():
-                return True
+            actual_fourcc = int(self.cap.get(cv2.CAP_PROP_FOURCC))
+            fourcc_str = "".join([chr((actual_fourcc >> 8 * i) & 0xFF) for i in range(4)])
+            self.get_logger().info(f"[디버그] 코덱 설정 결과: {fourcc_str}")
+
+            # 2. 너비 설정 및 즉시 읽기
+            res_w = self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, self.camera_width)
+            actual_w = self.cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+            self.get_logger().info(f"[디버그] 너비 {self.camera_width} 설정 요청 (성공여부: {res_w}) -> 실제 적용된 값: {actual_w}")
+
+            # 3. 높이 설정 및 즉시 읽기
+            res_h = self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, self.camera_height)
+            actual_h = self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+            self.get_logger().info(f"[디버그] 높이 {self.camera_height} 설정 요청 (성공여부: {res_h}) -> 실제 적용된 값: {actual_h}")
+
+            # 4. FPS 설정 및 즉시 읽기
+            res_fps = self.cap.set(cv2.CAP_PROP_FPS, self.camera_hz)
+            actual_fps = self.cap.get(cv2.CAP_PROP_FPS)
+            self.get_logger().info(f"[디버그] FPS {self.camera_hz} 설정 요청 (성공여부: {res_fps}) -> 실제 적용된 값: {actual_fps}")
+
+            # [디버그 3] 실제 프레임을 한 장 뽑아서 배열의 크기를 직접 측정
+            ret, frame = self.cap.read()
+            if ret:
+                self.get_logger().warning(f"==================================================")
+                self.get_logger().warning(f"[디버그] 실제 센서에서 뽑아낸 이미지 형태(Shape): {frame.shape}")
+                self.get_logger().warning(f"==================================================")
             else:
-                if self.cap:
-                    self.cap.release()  # 释放失败的摄像头
-                continue
+                self.get_logger().error(f"[디버그] 테스트 프레임 읽기 실패")
+
+            return True
+
         return False
     
     def run(self):

@@ -23,12 +23,12 @@ L_SENSOR_SERIAL_ADDR="1-1.4.1.4"
 L_SENSOR_VIDEO_ADDR="1-1.4.1.1"
 
 # [Right Gripper]
-R_GRIPPER_SERIAL_ADDR="1-5.1.1.4"
-R_GRIPPER_VIDEO_ADDR="1-5.1.1.1"
+R_GRIPPER_SERIAL_ADDR="1-5.2.1.4"
+R_GRIPPER_VIDEO_ADDR="1-5.2.1.1"
 
 # [Left Gripper]
-L_GRIPPER_SERIAL_ADDR="3-1.2.1.4"
-L_GRIPPER_VIDEO_ADDR="3-1.2.1.1"
+L_GRIPPER_SERIAL_ADDR="3-1.2.2.4"
+L_GRIPPER_VIDEO_ADDR="3-1.2.2.1"
 
 # =========================================================
 # 2. 핵심 함수: 주소로 장치 찾아서 이름 붙이기

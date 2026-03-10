@@ -29,6 +29,9 @@ GRIPPER_SERIAL_LINK="/dev/pika_gripper_right_serial"
 GRIPPER_VIDEO_LINK="/dev/pika_gripper_right_video"
 GRIPPER_SN=$R_GRIPPER_DEPTH_SN_R
 
+# Trolley
+TROLLEY_SN=$TROLLEY_DEPTH_SN
+
 # 환경변수 검증
 if [ -z "$SENSOR_SN" ]; then
     log_error "환경변수 R_SENSOR_DEPTH_SN_R이 설정되지 않았습니다."
@@ -42,9 +45,16 @@ if [ -z "$GRIPPER_SN" ]; then
     exit 1
 fi
 
+if [ -z "$TROLLEY_SN" ]; then
+    log_error "환경변수 R_TROLLEY_DEPTH_SN_R이 설정되지 않았습니다."
+    log_info "예: export R_TROLLEY_DEPTH_SN_R=230322272619"
+    exit 1
+fi
+
 log_info "RealSense 시리얼 번호:"
 echo "  Sensor:  $SENSOR_SN"
 echo "  Gripper: $GRIPPER_SN"
+echo "  Trolley: $TROLLEY_SN"
 
 # [중요] FPS 15 (USB 대역폭 보호)
 CAMERA_FPS=30
@@ -120,25 +130,57 @@ log_info "   -> 모터 실행 완료. 5초 대기..."
 sleep 5
 
 # =========================================================
-# 4. [Phase 2] 카메라 실행 (Launch File)
+# 3. [Phase 2] 로케이터 실행 (pika_single_locator)
 # =========================================================
-log_info "2. 듀얼 카메라 노드 실행..."
+log_info "2. 로케이터 실행 중 (pika_single_locator)..."
+ros2 launch pika_locator pika_single_locator.launch.py &
+sleep 3
 
-# 환경 설정 로드
-source /opt/ros/humble/setup.bash
-source /root/pika_ros/install/setup.bash
-source /root/pika_ros/install_new/setup.bash
+# =========================================================
+# 4. [Phase 3] 리얼센스 카메라 실행 (순차적 딜레이)
+# =========================================================
+log_info "3. 리얼센스 카메라 실행 중 (타입 충돌 방지 적용)..."
 
-# 런치 파일 실행
-# (여기서는 카메라만 켜집니다. 모터는 위에서 켰고, 런치파일에선 주석처리 했으니까요)
-ros2 launch sensor_tools open_sensor_gripper.launch.py \
-    sensor_depth_camera_no:="'$SENSOR_SN'" \
-    gripper_depth_camera_no:="'$GRIPPER_SN'" \
-    sensor_serial_port:=$SENSOR_SERIAL_LINK \
-    gripper_serial_port:=$GRIPPER_SERIAL_LINK \
-    sensor_fisheye_port:=$SENSOR_IDX \
-    gripper_fisheye_port:=$GRIPPER_IDX \
-    camera_fps:=$CAMERA_FPS \
-    camera_width:=$WIDTH \
-    camera_height:=$HEIGHT \
-    camera_profile:="${WIDTH}x${HEIGHT}x${CAMERA_FPS}"
+# (1) Sensor RealSense
+ros2 launch realsense2_camera rs_launch.py \
+    camera_namespace:=sensor camera_name:=camera \
+    serial_no:="'$SENSOR_SN'" \
+    rgb_camera.color_profile:="${WIDTH}x${HEIGHT}x${CAMERA_FPS}" \
+    depth_module.depth_profile:="${WIDTH}x${HEIGHT}x${CAMERA_FPS}" &
+sleep 3
+
+# (2) Gripper RealSense
+ros2 launch realsense2_camera rs_launch.py \
+    camera_namespace:=gripper camera_name:=camera \
+    serial_no:="'$GRIPPER_SN'" \
+    rgb_camera.color_profile:="${WIDTH}x${HEIGHT}x${CAMERA_FPS}" \
+    depth_module.depth_profile:="${WIDTH}x${HEIGHT}x${CAMERA_FPS}" &
+sleep 3
+
+# (3) Trolley RealSense
+ros2 launch realsense2_camera rs_launch.py \
+    camera_namespace:=trolley camera_name:=camera \
+    serial_no:="'$TROLLEY_SN'" \
+    rgb_camera.color_profile:="${WIDTH}x${HEIGHT}x${CAMERA_FPS}" \
+    depth_module.depth_profile:="${WIDTH}x${HEIGHT}x${CAMERA_FPS}" &
+sleep 3
+
+# =========================================================
+# 5. [Phase 4] 어안 카메라(Fisheye) 실행
+# =========================================================
+log_info "4. 듀얼 어안 카메라 실행 중..."
+
+# Sensor Fisheye (640x480 해상도 및 30fps 강제 지정)
+ros2 run sensor_tools usb_camera.py --ros-args \
+    -p camera_port:=$SENSOR_IDX -p camera_frame_id:="sensor/camera_fisheye_link" \
+    -p camera_width:=640 -p camera_height:=480 -p camera_fps:=30 \
+    -r /camera_rgb/color/image_raw:=/sensor/camera_fisheye/color/image_raw &
+
+# Gripper Fisheye (640x480 해상도 및 30fps 강제 지정)
+ros2 run sensor_tools usb_camera.py --ros-args \
+    -p camera_port:=$GRIPPER_IDX -p camera_frame_id:="gripper/camera_fisheye_link" \
+    -p camera_width:=640 -p camera_height:=480 -p camera_fps:=30 \
+    -r /camera_rgb/color/image_raw:=/gripper/camera_fisheye/color/image_raw &
+
+log_info "✅ 모든 시스템이 가동되었습니다. Ctrl+C를 누르면 전체 종료됩니다."
+wait
